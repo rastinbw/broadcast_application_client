@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonPlus">
+        <attr name="fontButton" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TextViewPlus">
+        <attr name="fontTextView" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="EditTextPlus">
+        <attr name="fontEditText" format="string"/>
+    </declare-styleable>
+</resources>

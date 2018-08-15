@@ -1,0 +1,148 @@
+package com.mahta.rastin.broadcastapplication.activity.other;
+
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.View;
+import com.mahta.rastin.broadcastapplication.R;
+import com.mahta.rastin.broadcastapplication.activity.main.MainActivity;
+import com.mahta.rastin.broadcastapplication.activity.startup.StartupActivity;
+import com.mahta.rastin.broadcastapplication.global.Constant;
+import com.mahta.rastin.broadcastapplication.global.G;
+import com.mahta.rastin.broadcastapplication.helper.HttpCommand;
+import com.mahta.rastin.broadcastapplication.helper.JSONParser;
+import com.mahta.rastin.broadcastapplication.helper.RealmController;
+import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
+import com.mahta.rastin.broadcastapplication.model.Group;
+import com.mahta.rastin.broadcastapplication.service.NotificationService;
+import java.util.List;
+import java.util.Locale;
+
+
+public class SplashActivity extends AppCompatActivity {
+
+    boolean isSplashDone = false;
+    boolean isDataReceived = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setLocale(new Locale("en"));
+        setContentView(R.layout.activity_splash);
+
+//        bandwidthMeter = new DefaultBandwidthMeter();
+//        extractorsFactory = new DefaultExtractorsFactory();
+//
+//        trackSelectionFactory = new AdaptiveTrackSelection.Factory(bandwidthMeter);
+//
+//        trackSelector = new DefaultTrackSelector(trackSelectionFactory);
+//
+///*        dataSourceFactory = new DefaultDataSourceFactory(this,
+//                Util.getUserAgent(this, "mediaPlayerSample"),
+//                (TransferListener<? super DataSource>) bandwidthMeter);*/
+//
+//        defaultBandwidthMeter = new DefaultBandwidthMeter();
+//        dataSourceFactory = new DefaultDataSourceFactory(this,
+//                Util.getUserAgent(this, "mediaPlayerSample"), defaultBandwidthMeter);
+//
+//
+//        mediaSource = new ExtractorMediaSource(Uri.parse("https://schoolbroadcastpanel.ir/uploads/./2dfd2157e30a625c5f53ef0376e8afb7.ogg"), dataSourceFactory, extractorsFactory, null, null);
+//
+//        player = ExoPlayerFactory.newSimpleInstance(this, trackSelector);
+//
+//
+//        player.prepare(mediaSource);
+//        player.setPlayWhenReady(true);
+
+
+
+        if (RealmController.getInstance().hasGroup())
+            isDataReceived = true;
+
+        if (G.isNetworkAvailable(getApplicationContext())) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                startService(new Intent(this, NotificationService.class));
+            }
+            runSplash();
+        }else {
+            findViewById(R.id.rtlNoNetwork).setVisibility(View.VISIBLE);
+            findViewById(R.id.imgLogo).setVisibility(View.GONE);
+        }
+
+        findViewById(R.id.btnTryAgain).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (G.isNetworkAvailable(getApplicationContext())){
+                    findViewById(R.id.rtlNoNetwork).setVisibility(View.GONE);
+                    findViewById(R.id.imgLogo).setVisibility(View.VISIBLE);
+                    runSplash();
+                }
+            }
+        });
+    }
+
+    private void runSplash() {
+        isSplashDone = false;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                isSplashDone = true;
+                if (isDataReceived)
+                    go();
+                else{
+                    findViewById(R.id.rtlNoNetwork).setVisibility(View.VISIBLE);
+                    findViewById(R.id.imgLogo).setVisibility(View.GONE);
+                }
+            }
+        }, Constant.SPLASH_TIME);
+
+        if (!isDataReceived) {
+            new HttpCommand(HttpCommand.COMMAND_GET_GROUP_LIST, null)
+                    .setOnResultListener(new OnResultListener() {
+                        @Override
+                        public void onResult(String result) {
+                            List<Group> list = JSONParser.parseGroups(result);
+                            if (list != null) {
+                                for (Group group : list) {
+                                    RealmController.getInstance().addGroup(group);
+                                    G.i(group.getTitle());
+                                }
+                            }
+
+                            isDataReceived = true;
+                            if (isSplashDone) {
+                                go();
+                            }
+                        }
+                    }).execute();
+        }
+    }
+
+    private void go(){
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @SuppressWarnings("deprecation")
+    private void setLocale(Locale locale){
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            configuration.setLocale(locale);
+            getApplicationContext().createConfigurationContext(configuration);
+        }
+        else{
+            configuration.locale=locale;
+            resources.updateConfiguration(configuration,displayMetrics);
+        }
+    }
+
+}

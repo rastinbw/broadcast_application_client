@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginBottom="3dp"
+    android:layout_marginTop="5dp"
+    app:cardCornerRadius="6dp">
+
+    <LinearLayout
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/lnlListItem"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="95dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/txtTitle"
+                android:textSize="13sp"
+                android:gravity="right"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_below="@+id/txtTitle"
+                android:layout_above="@+id/lnlDate"
+                android:id="@+id/txtPreview"
+                android:textSize="12sp"
+                android:gravity="right"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines = "2"
+                android:layout_marginTop="2dp"
+                app:fontTextView="shabnam.ttf"/>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:id="@+id/lnlDate"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtDate"
+                    android:gravity="right|center_vertical"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:fontTextView="shabnam.ttf"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:src="@color/colorRedLight"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+

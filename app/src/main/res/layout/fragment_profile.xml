@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.main.ProfileFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_simple_toolbar" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rtlLoader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lnlLoading"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/loadingLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorName="LineScaleIndicator"
+                app:indicatorColor="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/loadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/loading"
+                android:textSize="14sp"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/lnlNoNetwork"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/img_crying"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/network_error"
+                android:textSize="14sp"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+            <com.mahta.rastin.broadcastapplication.custom.ButtonPlus
+                android:text="@string/try_again"
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:background="@drawable/shape_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                app:fontButton="shabnam_bold.ttf"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_dialog">
+
+                <RelativeLayout
+                    android:background="@drawable/shape_header_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fontTextView="shabnam_bold.ttf"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#ffffff"
+                        android:text="@string/student_info"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:id="@+id/txtName"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="15sp"
+                        android:gravity="right"
+                        app:fontTextView="shabnam.ttf" />
+
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/first_and_last_name"
+                        android:paddingLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam_bold.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:id="@+id/txtGrade"
+                        android:gravity="right"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam.ttf" />
+
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/grade"
+                        android:paddingLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam_bold.ttf" />
+                </LinearLayout>
+
+                <!--temporary disable phone number-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:id="@+id/txtPhoneNumber"
+                        android:gravity="right"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam.ttf" />
+
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/phone_number_2"
+                        android:paddingLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam_bold.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:id="@+id/txtNationalCode"
+                        android:gravity="right"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam.ttf" />
+
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/national_code_2"
+                        android:paddingLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="15sp"
+                        app:fontTextView="shabnam_bold.ttf" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_dialog"
+                android:paddingBottom="10dp">
+
+                <RelativeLayout
+                    android:background="@drawable/shape_header_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:id="@+id/txtWorkbook"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fontTextView="shabnam_bold.ttf"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#ffffff"
+                        android:text="@string/student_workbook"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtNoWorkbook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:text="@string/no_workbook"
+                        android:textColor="@color/colorPrimaryText"
+                        app:fontTextView="shabnam.ttf"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rcvWorkbook"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <!--temporary disable change password-->
+            <android.support.v7.widget.CardView
+                android:visibility="gone"
+                android:id="@+id/crvChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:background="@drawable/shape_shadow_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/change_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        app:fontTextView="shabnam_bold.ttf"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/crvSignOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:background="@drawable/shape_sign_out_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:text="@string/sign_out"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        app:fontTextView="shabnam_bold.ttf"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

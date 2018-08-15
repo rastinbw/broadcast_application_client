@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_simple_toolbar" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <!--Email-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtMessageEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:hint="@string/email"
+                        android:inputType="text"
+                        app:fontEditText="shabnam.ttf"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/email_info"
+                        app:fontTextView="shabnam.ttf"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtMessageEmailError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/message_error_email"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        app:fontTextView="shabnam.ttf"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--Title-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtMessageTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:hint="@string/title"
+                        android:inputType="text"
+                        app:fontEditText="shabnam.ttf"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtMessageTitleError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/message_error_title"
+                        app:fontTextView="shabnam.ttf"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--Text-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="10dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtMessageText"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="start"
+                        android:hint="@string/text"
+                        android:inputType="textMultiLine"
+                        app:fontEditText="shabnam.ttf"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:padding="5dp"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtMessageTextError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/message_error_text"
+                        app:fontTextView="shabnam.ttf"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorRed"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/btnSend"
+                android:background="@drawable/shape_confirm_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp">
+
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    app:fontTextView="shabnam_bold.ttf"/>
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/loaderLogo"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:indicatorName="LineScaleIndicator"
+                    app:indicatorColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

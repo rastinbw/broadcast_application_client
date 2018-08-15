@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+tools:context=".activity.startup.ConfirmFragment">
+
+<LinearLayout
+    android:background="@color/colorPlatinum"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imgEntrance"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            android:paddingBottom="20dp"
+            android:scaleType="fitXY"/>
+
+        <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+            android:id="@+id/edtPhoneNumber"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="@color/colorSecondaryText"
+            android:background="@drawable/shape_rounded_edit_text"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:inputType="phone"
+            app:fontEditText="shabnam.ttf"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:hint="@string/phone_number"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+
+    <com.andexert.library.RippleView
+        android:id="@+id/btnSendPassword"
+        android:layout_gravity="center"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_button"
+        rv_centered="true"
+        app:rv_rippleDuration="300"
+        android:layout_marginBottom="20dp"
+        app:rv_type="rectangle">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/txtSendPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send_password"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_centerInParent="true"
+                app:fontTextView="shabnam.ttf"/>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/lnlSeconds"
+                android:layout_toLeftOf="@+id/txtSendPassword"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content">
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGrayLight"
+                    android:gravity="right"
+                    android:text="("/>
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtSeconds"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/colorGrayLight"
+                    app:fontTextView="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGrayLight"
+                    android:text=")"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </com.andexert.library.RippleView>
+
+    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="right"
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginBottom="20dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:gravity="center"
+            android:id="@+id/txtIntroduction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/introduce"
+            android:layout_alignParentBottom="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:layout_marginBottom="20dp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>

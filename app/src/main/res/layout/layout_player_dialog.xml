@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_dialog"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:padding="3dp"
+        android:background="@drawable/shape_header_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/imgExit"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_close_24dp"
+            android:layout_width="38dp"
+            android:layout_height="38dp" />
+
+        <com.like.LikeButton
+            android:id="@+id/btnFavorite"
+            android:layout_toLeftOf="@+id/imgExit"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon_type="Star"
+            app:icon_size="24dp"
+            app:anim_scale_factor="2"
+            />
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            app:fontTextView="shabnam.ttf"
+            android:id="@+id/txtTitle"
+            android:layout_toLeftOf="@+id/btnFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_marginRight="2dp"
+            android:textColor="#ffffff"
+            android:ellipsize="end"
+            android:maxLines = "1" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:id="@+id/prgWait"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            app:indicatorName="BallSpinFadeLoaderIndicator"/>
+
+
+    </RelativeLayout>
+
+    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+        android:visibility="gone"
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fontTextView="shabnam.ttf"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="right"
+        android:textSize="14sp"
+        android:textColor="@color/colorPrimaryText"/>
+
+    <RelativeLayout
+        android:background="@drawable/shape_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="8dp">
+
+
+
+        <ImageView
+            android:id="@+id/imgPlayAndPause"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/img_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <SeekBar
+            android:layout_marginTop="12dp"
+            android:id="@+id/seekBar"
+            android:layout_toRightOf="@+id/imgPlayAndPause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"/>
+        
+        <TextView
+            android:layout_alignLeft="@+id/seekBar"
+            android:layout_below="@+id/seekBar"
+            android:id="@+id/txtPastTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorPrimaryText"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:paddingLeft="8dp"
+            android:text="@string/time"/>
+
+        <TextView
+            android:layout_alignRight="@+id/seekBar"
+            android:layout_below="@+id/seekBar"
+            android:id="@+id/txtDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryText"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_marginTop="3dp"
+            android:text="@string/time"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

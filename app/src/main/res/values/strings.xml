@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">مهتا</string>
+    <string-array name="navigation_drawer_items_array">
+        <item>ورود به عنوان دانش آموز</item>
+        <item>اطلاعیه ها</item>
+        <item>برنامه های کلاسی</item>
+        <item>رادیو مدرسه</item>
+        <item>پشتیبانی</item>
+        <item>قوانین</item>
+        <item>درباره ما</item>
+    </string-array>
+
+    <string-array name="navigation_drawer_items_array_logged_in">
+        <item>پروفایل</item>
+        <item>اطلاعیه ها</item>
+        <item>برنامه های کلاسی</item>
+        <item>رادیو مهتا</item>
+        <item>پشتیبانی</item>
+        <item>قوانین</item>
+        <item>درباره ما</item>
+    </string-array>
+    <string name="click_twice">برای خروج دوباره لمس کنید</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="there_is_no_post">اطلاعیه ای وجود ندارد</string>
+    <string name="no_internet">عدم دسترسی به اینترنت</string>
+    <string name="username">نام کاربری</string>
+    <string name="email">ایمیل</string>
+    <string name="password">رمز عبور</string>
+    <string name="login">ورود</string>
+    <string name="national_code">کد ملی</string>
+    <string name="authorize">احراز هویت</string>
+    <string name="first_name">نام</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="phone_number">شماره تماس (09xxxxxxxxx)</string>
+    <string name="validation_error_national_code">کدملی نامعتبر</string>
+    <string name="validation_error_first_name">نام تا حداکثر 20 کاراکتر</string>
+    <string name="validation_error_last_name">نام خانوادگی تا حداکثر 30 کاراکتر</string>
+    <string name="validation_error_phone_number">شماره تماس نامعتبر</string>
+    <string name="register_repeated_username_error">این نام کاربری در سیستم ثبت شده است</string>
+    <string name="confirm">تایید</string>
+    <string name="invalid_national_code">کد ملی در سیستم موجود نمیباشد</string>
+    <string name="validation_error_password">رمز عبور نامعتبر</string>
+    <string name="invalid_password">رمزعبور نامعتبر است</string>
+    <string name="there_is_no_media">رسانه ای وجود ندارد</string>
+    <string name="title_activity_media_player_actvity">MediaPlayerActvity</string>
+    <string name="pls_login">لطفا به عنوان دانش آموز وارد شوید</string>
+    <string name="search">جست و جو</string>
+    <string name="enter">ورود</string>
+    <string name="enter_as_student">ورود به عنوان دانش آموز</string>
+    <string name="introduce">powerd by DGR Institution</string>
+    <string name="enter_as_guest">ورود به عنوان مهمان</string>
+    <string name="restore_password">فراموشی رمزعبور</string>
+    <string name="cancel">لغو</string>
+    <string name="send_password">ارسال رمز عبور</string>
+    <string name="authorized_message">، هویت شما احراز شد. لطفا برای دریافت رمز عبور شماره تماس خود را وارد کنید.</string>
+    <string name="time">0:00</string>
+    <string name="student_info">اطلاعات دانش آموز</string>
+    <string name="first_and_last_name">نام و نام خانوادگی :</string>
+    <string name="phone_number_2">شماره تماس :</string>
+    <string name="national_code_2">کد ملی :</string>
+    <string name="workbook">کارنامه</string>
+    <string name="student_workbook">کارنامه های دانش آموز</string>
+    <string name="sign_out">خروج از حساب کاربری</string>
+    <string name="show_favorite_media">نمایش رسانه های مورد علاقه</string>
+    <string name="reload">بروزرسانی</string>
+    <string name="show_all_media">نمایش همه رسانه ها</string>
+    <string name="show_favorite_post">نمایش اطلاعیه های مورد علاقه</string>
+    <string name="show_all_post">نمایش همه اطلاعیه ها</string>
+    <string name="loading">درحال بارگزاری</string>
+    <string name="network_error">خطا در ارتباط با شبکه</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="login_ok">وارد شدید</string>
+    <string name="profile">پروفایل</string>
+    <string name="favorite_posts">اطلاعیه های مورد علاقه</string>
+    <string name="favorite_media">رسانه های مورد علاقه</string>
+    <string name="sign_out_ensuring_message">آیا از حساب کاربری خود خارج میشوید؟</string>
+    <string name="email_info">پاسخ شما به این ایمیل ارسال خواهد شد</string>
+    <string name="message_error_email">وارد کردن ایمیل الزامی است</string>
+    <string name="title">عنوان</string>
+    <string name="text">متن</string>
+    <string name="about_us">درباره ما</string>
+    <string name="send">ارسال</string>
+    <string name="message_error_title">عنوان پیام اجباری است (بین 4 تا 30 کاراکتر)</string>
+    <string name="message_error_text">متن پیام الزامی است (بین 10 تا 500 کاراکتر)</string>
+    <string name="sent_message_successfully">پیام شما با موفقیت ارسال شد</string>
+    <string name="sent_message_not_successfully">پیام شماارسال نشد</string>
+    <string name="support">پشتیبانی</string>
+    <string name="new_media">رسانه جدید</string>
+    <string name="new_post">اطلاعیه جدید</string>
+    <string name="server_error">خطای سرور</string>
+    <string name="change_password">تغییر رمز عبور</string>
+    <string name="current_password">رمزعبور فعلی :</string>
+    <string name="message_error_password">وارد کردن رمزعبور فعلی الزامی است</string>
+    <string name="new_password">رمزعبور جدید :</string>
+    <string name="message_error_new_password">وارد کردن رمزعبور جدید الزامی است (بین 6 تا 18 کاراکتر)</string>
+    <string name="new_password_repeat">تکرار رمزعبور جدید :</string>
+    <string name="message_error_new_password_repeat">عدم مطابقت رمز عبورهای جدید</string>
+    <string name="change_password_successfully">تغییر رمزعبور موفقیت آمیز</string>
+    <string name="wrong_password">رمزعبور فعلی نامعتبر میباشد</string>
+    <string name="change_password_not_successfully">تغییر رمزعبور ناموفق</string>
+    <string name="no_workbook">کارنامه ای برای نمایش موجود نیست</string>
+    <string name="share_to">اشتراک گزاری ازطریق</string>
+    <string name="grade">پایه تحصیلی :</string>
+    <string name="there_is_no_program">برنامه کلاسی وجود ندارد</string>
+    <string name="favorite_programs">برنامه های کلاسی مورد علاقه</string>
+    <string name="all_groups">همه گروه ها</string>
+    <string name="choose_group">انتخاب گروه آموزشی</string>
+    <string name="rules">قوانین</string>
+    <string name="new_program">برنامه کلاسی جدید</string>
+    <string name="message_for_juniors">دانش آموزان دبیرستانی میتوانند با وارد کردن کد ملی به عنوان دانش أموز وارد شوند.</string>
+</resources>

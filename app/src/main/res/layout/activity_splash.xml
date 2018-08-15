@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.other.SplashActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:src="@drawable/img_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rtlNoNetwork"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/txtIntroduction">
+
+        <LinearLayout
+            android:id="@+id/lnlNoNetwork"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCry"
+                android:src="@drawable/img_crying"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/network_error"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+        </LinearLayout>
+
+        <com.mahta.rastin.broadcastapplication.custom.ButtonPlus
+            android:text="@string/try_again"
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:background="@drawable/shape_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/lnlNoNetwork"
+            android:layout_centerHorizontal="true"
+            app:fontButton="shabnam_bold.ttf"/>
+
+    </RelativeLayout>
+
+
+    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+        android:gravity="center"
+        android:id="@+id/txtIntroduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/introduce"
+        android:layout_alignParentBottom="true"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>
