@@ -60,14 +60,14 @@ public class FavoritePostListFragment extends Fragment {
 
         favoriteAdapter = new FavoritePostAdapter(
                 getActivity(),
-                RealmController.getInstance().getAllFavoritePosts()
+                G.realmController.getAllFavoritePosts()
         );
 
         favoriteAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
-                    FavoritePost fp = RealmController.getInstance().getAllFavoritePosts().get(position);
+                    FavoritePost fp = G.realmController.getAllFavoritePosts().get(position);
                     if (fp != null){
                         if (G.isNetworkAvailable(getActivity())){
                             Intent intent = new Intent(getActivity(), PostDisplayActivity.class);
@@ -118,7 +118,7 @@ public class FavoritePostListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (currentId != null){
-            if (!RealmController.getInstance().hasFavoritePost(currentId)) {
+            if (!G.realmController.hasFavoritePost(currentId)) {
                 favoriteAdapter.notifyItemRemoved(currentPosition);
                 if (favoriteAdapter.getItemCount() <= 0)
                     txtNoPost.setVisibility(View.VISIBLE);
@@ -181,7 +181,7 @@ public class FavoritePostListFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (searchView.getQuery().length() == 0) {
-                    favoriteAdapter.setRealmResults(RealmController.getInstance().getAllFavoritePosts());
+                    favoriteAdapter.setRealmResults(G.realmController.getAllFavoritePosts());
                     favoriteAdapter.notifyDataSetChanged();
 
                     if (favoriteAdapter.getItemCount() <= 0)
@@ -193,7 +193,7 @@ public class FavoritePostListFragment extends Fragment {
             }
 
             void callSearch(String query) {
-                favoriteAdapter.setRealmResults(RealmController.getInstance().getFavoritePostWithTitle(query));
+                favoriteAdapter.setRealmResults(G.realmController.getFavoritePostWithTitle(query));
                 favoriteAdapter.notifyDataSetChanged();
 
                 if (favoriteAdapter.getItemCount() <= 0)

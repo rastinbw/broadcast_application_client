@@ -88,7 +88,7 @@ public class ProgramContentFragment extends Fragment {
         });
 
         btnFavorite =  toolbar.findViewById(R.id.btnFavorite);
-        if (RealmController.getInstance().hasFavoriteProgram(currentProgram.getId()))
+        if (G.realmController.hasFavoriteProgram(currentProgram.getId()))
             btnFavorite.setLiked(true);
 
             btnFavorite.setOnLikeListener(new OnLikeListener() {
@@ -97,13 +97,13 @@ public class ProgramContentFragment extends Fragment {
                 G.i("adding " +  (currentProgram.getId()));
                 isLiked = true;
                 FavoriteProgram favoriteProgram = new FavoriteProgram(currentProgram);
-                RealmController.getInstance().addFavoriteProgram(favoriteProgram);
+                G.realmController.addFavoriteProgram(favoriteProgram);
             }
 
             @Override
             public void unLiked(LikeButton likeButton) {
                 isLiked = false;
-                RealmController.getInstance().removeFavoriteProgram(
+                G.realmController.removeFavoriteProgram(
                         (currentProgram.getId())
                 );
             }

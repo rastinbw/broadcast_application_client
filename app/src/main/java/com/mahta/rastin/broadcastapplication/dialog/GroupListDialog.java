@@ -11,6 +11,7 @@ import android.view.Window;
 
 import com.mahta.rastin.broadcastapplication.R;
 import com.mahta.rastin.broadcastapplication.adapter.GroupAdapter;
+import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.helper.RealmController;
 import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
 import com.mahta.rastin.broadcastapplication.model.Group;
@@ -37,7 +38,7 @@ public class GroupListDialog extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.layout_group_list_dialog);
 
-        final List<Group> list = RealmController.getInstance().getGroupList();
+        final List<Group> list = G.realmController.getGroupList();
         GroupAdapter adapter = new GroupAdapter(activity, list);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override

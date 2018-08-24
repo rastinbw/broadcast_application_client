@@ -59,14 +59,14 @@ public class FavoriteMediaListFragment extends Fragment {
 
         favoriteAdapter = new FavoriteMediaAdapter(
                 getActivity(),
-                RealmController.getInstance().getAllFavoriteMedia()
+                G.realmController.getAllFavoriteMedia()
         );
 
         favoriteAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
-                    FavoriteMedia fm = RealmController.getInstance().getAllFavoriteMedia().get(position);
+                    FavoriteMedia fm = G.realmController.getAllFavoriteMedia().get(position);
                     if (fm != null){
                         PlayerDialog dialog = new PlayerDialog(
                                 getActivity(),
@@ -166,7 +166,7 @@ public class FavoriteMediaListFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (searchView.getQuery().length() == 0) {
-                    favoriteAdapter.setRealmResults(RealmController.getInstance().getAllFavoriteMedia());
+                    favoriteAdapter.setRealmResults(G.realmController.getAllFavoriteMedia());
                     favoriteAdapter.notifyDataSetChanged();
 
                     if (favoriteAdapter.getItemCount() <= 0)
@@ -178,7 +178,7 @@ public class FavoriteMediaListFragment extends Fragment {
             }
 
             void callSearch(String query) {
-                favoriteAdapter.setRealmResults(RealmController.getInstance().getFavoriteMediaWithTitle(query));
+                favoriteAdapter.setRealmResults(G.realmController.getFavoriteMediaWithTitle(query));
                 favoriteAdapter.notifyDataSetChanged();
 
                 if (favoriteAdapter.getItemCount() <= 0)

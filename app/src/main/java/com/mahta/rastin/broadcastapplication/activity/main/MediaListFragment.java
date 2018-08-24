@@ -99,12 +99,12 @@ public class MediaListFragment extends Fragment implements SwipeRefreshLayout.On
         lnlLoading = view.findViewById(R.id.lnlLoading);
         lnlNoNetwork = view.findViewById(R.id.lnlNoNetwork);
 
-        adapter = new MediaAdapter(getActivity(), RealmController.getInstance().getAllMedia());
+        adapter = new MediaAdapter(getActivity(), G.realmController.getAllMedia());
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
-                    Media media = RealmController.getInstance().getAllMedia().get(position);
+                    Media media = G.realmController.getAllMedia().get(position);
                     if (media != null){
                         PlayerDialog dialog = new PlayerDialog(
                                 getActivity(),
@@ -260,7 +260,7 @@ public class MediaListFragment extends Fragment implements SwipeRefreshLayout.On
                             if (media != null) {
                                 for (Media m : media) {
                                     G.i(m.getId() + "");
-                                    RealmController.getInstance().addMedia(m);
+                                    G.realmController.addMedia(m);
                                 }
                                 adapter.notifyItemRangeInserted(start - 1, media.size());
 
@@ -318,7 +318,7 @@ public class MediaListFragment extends Fragment implements SwipeRefreshLayout.On
     }
 
     private void clearMedia(){
-        RealmController.getInstance().clearAllMedia();
+        G.realmController.clearAllMedia();
     }
 
     @Override

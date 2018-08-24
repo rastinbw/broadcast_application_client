@@ -101,13 +101,13 @@ public class PostListFragment extends Fragment implements SwipeRefreshLayout.OnR
         lnlLoading = view.findViewById(R.id.lnlLoading);
         lnlNoNetwork = view.findViewById(R.id.lnlNoNetwork);
 
-        adapter = new PostAdapter(getActivity(), RealmController.getInstance().getAllPosts());
+        adapter = new PostAdapter(getActivity(), G.realmController.getAllPosts());
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
                     Intent intent = new Intent(getActivity(), PostDisplayActivity.class);
-                    intent.putExtra(Keys.KEY_EXTRA_FLAG,RealmController.getInstance().getAllPosts().get(position));
+                    intent.putExtra(Keys.KEY_EXTRA_FLAG,G.realmController.getAllPosts().get(position));
                     startActivity(intent);
                 }else {
                     G.toastLong(G.getStringFromResource(R.string.no_internet, getActivity()), getActivity());
@@ -259,7 +259,7 @@ public class PostListFragment extends Fragment implements SwipeRefreshLayout.OnR
                             if (posts != null) {
                                 for (Post post : posts) {
                                     G.i(post.getId() + "");
-                                    RealmController.getInstance().addPost(post);
+                                    G.realmController.addPost(post);
                                 }
                                 adapter.notifyItemRangeInserted(start - 1, posts.size());
 
@@ -315,7 +315,7 @@ public class PostListFragment extends Fragment implements SwipeRefreshLayout.OnR
     }
 
     private void clearPosts(){
-        RealmController.getInstance().clearAllPosts();
+        G.realmController.clearAllPosts();
     }
 
     @Override

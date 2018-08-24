@@ -1,24 +1,16 @@
 <resources>
     <string name="app_name">مهتا</string>
     <string-array name="navigation_drawer_items_array">
-        <item>ورود به عنوان دانش آموز</item>
+        <item>پروفایل</item>
         <item>اطلاعیه ها</item>
         <item>برنامه های کلاسی</item>
         <item>رادیو مدرسه</item>
+        <item>اعضای مجموعه</item>
         <item>پشتیبانی</item>
         <item>قوانین</item>
         <item>درباره ما</item>
     </string-array>
 
-    <string-array name="navigation_drawer_items_array_logged_in">
-        <item>پروفایل</item>
-        <item>اطلاعیه ها</item>
-        <item>برنامه های کلاسی</item>
-        <item>رادیو مهتا</item>
-        <item>پشتیبانی</item>
-        <item>قوانین</item>
-        <item>درباره ما</item>
-    </string-array>
     <string name="click_twice">برای خروج دوباره لمس کنید</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -28,21 +20,25 @@
     <string name="username">نام کاربری</string>
     <string name="email">ایمیل</string>
     <string name="password">رمز عبور</string>
+    <string name="continu">ادامه</string>
     <string name="login">ورود</string>
     <string name="national_code">کد ملی</string>
     <string name="authorize">احراز هویت</string>
     <string name="first_name">نام</string>
     <string name="last_name">نام خانوادگی</string>
-    <string name="phone_number">شماره تماس (09xxxxxxxxx)</string>
-    <string name="validation_error_national_code">کدملی نامعتبر</string>
+    <string name="phone_number">شماره تلفن همراه (09xxxxxxxxx)</string>
     <string name="validation_error_first_name">نام تا حداکثر 20 کاراکتر</string>
     <string name="validation_error_last_name">نام خانوادگی تا حداکثر 30 کاراکتر</string>
-    <string name="validation_error_phone_number">شماره تماس نامعتبر</string>
-    <string name="register_repeated_username_error">این نام کاربری در سیستم ثبت شده است</string>
-    <string name="confirm">تایید</string>
+    <string name="validation_error_national_code">کدملی نامعتبر</string>
+    <string name="validation_error_phone_number">شماره تلفن همراه نامعتبر</string>
+    <string name="register_repeated_national_code_error">کد ملی  وارد شده تکراری است</string>
+    <string name="register_repeated_phone_number_error">شماره تلفن همراه وارد شده تکراری است</string>
     <string name="invalid_national_code">کد ملی در سیستم موجود نمیباشد</string>
-    <string name="validation_error_password">رمز عبور نامعتبر</string>
-    <string name="invalid_password">رمزعبور نامعتبر است</string>
+    <string name="validation_error_password_login">رمز عبور را وارد کنید</string>
+    <string name="validation_error_password_register">بین 6 تا 12 کاراکتر</string>
+    <string name="validation_error_password_repeat">رمز عبور ها یکسان نیستند</string>
+    <string name="invalid_password">رمزعبور اشتباه است</string>
+    <string name="confirm">تایید</string>
     <string name="there_is_no_media">رسانه ای وجود ندارد</string>
     <string name="title_activity_media_player_actvity">MediaPlayerActvity</string>
     <string name="pls_login">لطفا به عنوان دانش آموز وارد شوید</string>
@@ -54,11 +50,11 @@
     <string name="restore_password">فراموشی رمزعبور</string>
     <string name="cancel">لغو</string>
     <string name="send_password">ارسال رمز عبور</string>
-    <string name="authorized_message">، هویت شما احراز شد. لطفا برای دریافت رمز عبور شماره تماس خود را وارد کنید.</string>
+    <string name="authorized_message">، هویت شما احراز شد. لطفا برای دریافت رمز عبور شماره تلفن همراه خود را وارد کنید.</string>
     <string name="time">0:00</string>
     <string name="student_info">اطلاعات دانش آموز</string>
     <string name="first_and_last_name">نام و نام خانوادگی :</string>
-    <string name="phone_number_2">شماره تماس :</string>
+    <string name="phone_number_2">شماره تلفن همراه :</string>
     <string name="national_code_2">کد ملی :</string>
     <string name="workbook">کارنامه</string>
     <string name="student_workbook">کارنامه های دانش آموز</string>
@@ -102,7 +98,7 @@
     <string name="change_password_not_successfully">تغییر رمزعبور ناموفق</string>
     <string name="no_workbook">کارنامه ای برای نمایش موجود نیست</string>
     <string name="share_to">اشتراک گزاری ازطریق</string>
-    <string name="grade">پایه تحصیلی :</string>
+    <string name="grade">نمره</string>
     <string name="there_is_no_program">برنامه کلاسی وجود ندارد</string>
     <string name="favorite_programs">برنامه های کلاسی مورد علاقه</string>
     <string name="all_groups">همه گروه ها</string>
@@ -110,4 +106,33 @@
     <string name="rules">قوانین</string>
     <string name="new_program">برنامه کلاسی جدید</string>
     <string name="message_for_juniors">دانش آموزان دبیرستانی میتوانند با وارد کردن کد ملی به عنوان دانش أموز وارد شوند.</string>
+    <string name="register">ثبت نام</string>
+    <string name="there_is_no_staff">عضوی برای نمایش وجود ندارد</string>
+    <string name="members">اعضای مجموعه</string>
+    <string name="forget_password">فراموشی رمزعبور</string>
+    <string name="enter_as_parent">ورود به عنوان اولیا</string>
+    <string name="passwordRepeat">تکرار رمز عبور</string>
+    <string name="validation_error_group">گروه آموزشی را انتخاب کنید</string>
+    <string name="verification_code">کد تایید</string>
+    <string name="send_verification_code">ارسال کد تایید</string>
+    <string name="validation_error_verification_code">لطفا کد تایید 4 رقمی را وارد کنید</string>
+    <string name="invalid_verification_code">کد تایید اشتباه است</string>
+    <string name="group">گروه آموزشی :</string>
+    <string name="update_info">ویرایش اطلاعات</string>
+    <string name="group_2">گروه آموزشی :</string>
+    <string name="first_name_2">نام :</string>
+    <string name="last_name_2">نام خوانوادگی :</string>
+    <string name="update_info_successfully">ویرایش اطلاعات موفقیت آمیز</string>
+    <string name="update_info_not_successfully">ویرایش اطلاعات ناموفق</string>
+    <string name="parent_code">کد اولیا</string>
+    <string name="pls_get_code">لطفا کد اولیا دانش آموز خود را از طرف مدرسه دریافت کنید.</string>
+    <string name="pls_notice">توجه داشته باشید که با هر بار ورود دانش آموزتان به سیستم، شما باید مجددا با کد اولیا خود وارد شوید.</string>
+    <string name="validation_error_parent_code">کد اولیا نامعتبر</string>
+    <string name="invalid_parent_code">کد اولیا وارد شده در سیستم موجود نیست</string>
+    <string name="user_not_registered">دانش آموز شما در سیستم ثبت نام نکرده است</string>
+    <string name="send_link">دریافت لینک تغییر رمز عبور</string>
+    <string name="lessonTitle">عنوان درس</string>
+    <string name="insert_date">تاریخ درج کارنامه :</string>
+    <string name="update_date">تاریخ آخرین تغییرات :</string>
+    <string name="scale">مقیاس :</string>
 </resources>

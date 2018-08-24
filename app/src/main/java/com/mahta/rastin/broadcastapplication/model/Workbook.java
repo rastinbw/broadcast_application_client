@@ -10,6 +10,8 @@ public class Workbook extends RealmObject implements Parcelable {
     @PrimaryKey
     private int id;
 
+    private int scale;
+
     private String year;
 
     private String month;
@@ -18,15 +20,22 @@ public class Workbook extends RealmObject implements Parcelable {
 
     private String grades;
 
+    private String created_at;
+
+    private String updated_at;
+
     public Workbook(){}
 
     //parcelable part***********************************************************************
     protected Workbook(Parcel in) {
         id = in.readInt();
+        scale = in.readInt();
         year = in.readString();
         month = in.readString();
         lessons = in.readString();
         grades = in.readString();
+        created_at = in.readString();
+        updated_at = in.readString();
     }
 
     public static final Creator<Workbook> CREATOR = new Creator<Workbook>() {
@@ -49,10 +58,13 @@ public class Workbook extends RealmObject implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
+        dest.writeInt(scale);
         dest.writeString(year);
         dest.writeString(month);
         dest.writeString(lessons);
         dest.writeString(grades);
+        dest.writeString(created_at);
+        dest.writeString(updated_at);
     }
     //parcelable part***********************************************************************
     public int getId() {
@@ -93,5 +105,29 @@ public class Workbook extends RealmObject implements Parcelable {
 
     public void setGrades(String grades) {
         this.grades = grades;
+    }
+
+    public int getScale() {
+        return scale;
+    }
+
+    public void setScale(int scale) {
+        this.scale = scale;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }

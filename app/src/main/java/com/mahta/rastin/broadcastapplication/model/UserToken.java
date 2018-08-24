@@ -12,6 +12,8 @@ public class UserToken extends RealmObject {
     @Required
     private String token;
 
+    private boolean isParent;
+
     public int getId() {
         return id;
     }
@@ -28,4 +30,11 @@ public class UserToken extends RealmObject {
         this.token = token;
     }
 
+    public boolean isParent() {
+        return isParent;
+    }
+
+    public void setParent(boolean parent) {
+        isParent = parent;
+    }
 }

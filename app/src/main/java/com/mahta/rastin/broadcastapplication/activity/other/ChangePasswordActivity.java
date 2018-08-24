@@ -57,16 +57,21 @@ public class ChangePasswordActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (G.isNetworkAvailable(ChangePasswordActivity.this)){
-                    if (validate()){
-                        changePassword();
-                    }
-                }else
-                    G.toastLong(G.getStringFromResource(R.string.no_internet,
-                            ChangePasswordActivity.this),
-                            ChangePasswordActivity.this);
+                confirm();
             }
         });
+    }
+
+    private void confirm() {
+        G.hideKeyboard(ChangePasswordActivity.this);
+        if (G.isNetworkAvailable(ChangePasswordActivity.this)){
+            if (validate()){
+                changePassword();
+            }
+        }else
+            G.toastLong(G.getStringFromResource(R.string.no_internet,
+                    ChangePasswordActivity.this),
+                    ChangePasswordActivity.this);
     }
 
     private boolean validate() {
@@ -120,7 +125,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         ContentValues params = new ContentValues();
         params.put(Keys.KEY_PASSWORD, edtCurrentPassword.getText().toString());
         params.put(Keys.KEY_NEW_PASSWORD,edtNewtPassword.getText().toString());
-        params.put(Keys.KEY_TOKEN, RealmController.getInstance().getUserToken().getToken());
+        params.put(Keys.KEY_TOKEN, G.realmController.getUserToken().getToken());
         changeState(0);
 
         new Handler().postDelayed(new Runnable() {
@@ -167,6 +172,13 @@ public class ChangePasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        toolbar.findViewById(R.id.imgCheck).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirm();
             }
         });
 

@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mahta.rastin.broadcastapplication.R;
+import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.model.WorkbookTuple;
 
 import java.util.List;
@@ -18,10 +19,12 @@ public class WorkbookAdapter extends RecyclerView.Adapter<WorkbookAdapter.Custom
 
     private LayoutInflater inflater;
     private List<WorkbookTuple> data;
+    private Context context;
 
     public WorkbookAdapter(Context context, List<WorkbookTuple> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        this.context = context;
     }
 
     @Override
@@ -33,8 +36,30 @@ public class WorkbookAdapter extends RecyclerView.Adapter<WorkbookAdapter.Custom
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         final WorkbookTuple current = data.get(position); //This is nice
-        holder.txtLesson.setText(current.getLesson());
-        holder.txtGrade.setText(current.getGrade());
+
+        try {
+            int scale = current.getScale();
+            if (Integer.parseInt(current.getGrade()) <= (scale/4)*3 &&
+                    Integer.parseInt(current.getGrade()) > (scale/4)*2) {
+                holder.txtGrade.setTextColor(G.getColorFromResource(R.color.colorSecondary, context));
+            }else if (Integer.parseInt(current.getGrade()) <= (scale/4)*2 &&
+                    Integer.parseInt(current.getGrade()) > (scale/4)){
+                holder.txtGrade.setTextColor(G.getColorFromResource(R.color.colorSecondaryDark, context));
+            }else if (Integer.parseInt(current.getGrade()) <= (scale/4)){
+                holder.txtGrade.setTextColor(G.getColorFromResource(R.color.colorRed, context));
+            }
+
+            holder.txtLesson.setText(current.getLesson());
+            if (scale == 100) {
+                String grade = current.getGrade() + " ٪";
+                holder.txtGrade.setText(grade);
+            }
+            else
+                holder.txtGrade.setText(current.getGrade());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     @Override

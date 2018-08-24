@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPlatinum"
+    android:orientation="vertical"
+    tools:context=".activity.registration.RegisterFragment">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_check_toolbar" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPlatinum"
+                android:orientation="vertical">
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/spnGroups"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/first_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtLatName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/last_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtNationalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/national_code"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/phone_number"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                    android:id="@+id/edtPasswordRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rounded_edit_text"
+                    android:gravity="right|center_vertical"
+                    android:hint="@string/passwordRepeat"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    app:fontEditText="shabnam.ttf" />
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/btnContinue"
+                    rv_centered="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_button"
+                    app:rv_rippleDuration="100"
+                    app:rv_type="rectangle">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/continu"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        app:fontTextView="shabnam.ttf" />
+
+                </com.andexert.library.RippleView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:visibility="gone"
+                    android:id="@+id/loaderLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    app:indicatorColor="@color/colorAccent"
+                    app:indicatorName="LineScaleIndicator" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,5 +1,7 @@
 package com.mahta.rastin.broadcastapplication.helper;
 
+import android.transition.Slide;
+
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.model.Group;
@@ -7,6 +9,9 @@ import com.mahta.rastin.broadcastapplication.model.Media;
 import com.mahta.rastin.broadcastapplication.model.MyNotification;
 import com.mahta.rastin.broadcastapplication.model.Post;
 import com.mahta.rastin.broadcastapplication.model.Program;
+import com.mahta.rastin.broadcastapplication.model.Slider;
+import com.mahta.rastin.broadcastapplication.model.Staff;
+import com.mahta.rastin.broadcastapplication.model.StaffUpdated;
 import com.mahta.rastin.broadcastapplication.model.Student;
 import com.mahta.rastin.broadcastapplication.model.Workbook;
 
@@ -14,8 +19,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class JSONParser {
     public static int getResultCodeFromJson(String content){
@@ -135,6 +144,117 @@ public class JSONParser {
         return token;
     }
 
+    public static Slider parseSlider(String content){
+        try {
+            JSONObject obj = new JSONObject(content);
+            JSONObject sobj = obj.getJSONArray(Keys.KEY_DATA).getJSONObject(0);
+
+            Slider slider = new Slider();
+            slider.setId(sobj.getInt(Keys.KEY_ID));
+            slider.setImage_1(sobj.getString(Keys.KEY_IMAGE_1));
+            slider.setImage_2(sobj.getString(Keys.KEY_IMAGE_2));
+            slider.setImage_3(sobj.getString(Keys.KEY_IMAGE_3));
+            slider.setImage_4(sobj.getString(Keys.KEY_IMAGE_4));
+            slider.setUpdated_at(sobj.getString(Keys.KEY_DATE_UPDATED));
+
+            return slider;
+        } catch (JSONException e) {
+            G.e("4: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static Date parseSliderUpdated(String content){
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+
+            JSONObject obj = new JSONObject(content);
+            Date date = format.parse(obj.getString(Keys.KEY_DATA));
+
+            return date;
+        } catch (JSONException e) {
+            G.e("4: " + e.getMessage());
+            return null;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List<Staff> parseStaff(String content){
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+
+            JSONObject obj = new JSONObject(content);
+            JSONArray data = obj.getJSONArray(Keys.KEY_DATA);
+            if (data.length() > 0){
+                List<Staff> staffList = new ArrayList<>();
+
+                for (int i = 0; i < data.length(); i++) {
+                    if (!data.isNull(i)){
+                        JSONObject sobj = data.getJSONObject(i);
+
+                        Staff staff = new Staff();
+                        staff.setId(sobj.getInt(Keys.KEY_ID));
+                        staff.setFirst_name(sobj.getString(Keys.KEY_FIRST_NAME));
+                        staff.setLast_name(sobj.getString(Keys.KEY_LAST_NAME));
+                        staff.setEmail(sobj.getString(Keys.KEY_EMAIL));
+                        staff.setDescription(sobj.getString(Keys.KEY_DESCRIPTION));
+                        staff.setImage(sobj.getString(Keys.KEY_PHOTO));
+
+                        Date date = format.parse(sobj.getString(Keys.KEY_DATE_UPDATED));
+                        staff.setUpdated_at(date);
+                        staffList.add(staff);
+                    }
+                }
+                return staffList;
+            }else
+                return null;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            G.e("6: " + e.getMessage());
+            return null;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+
+        }
+    }
+
+
+    public static List<StaffUpdated> parseStaffUpdated(String content){
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+
+            JSONObject obj = new JSONObject(content);
+            JSONArray data = obj.getJSONArray(Keys.KEY_DATA);
+            if (data.length() > 0){
+                List<StaffUpdated> list = new ArrayList<>();
+
+                for (int i = 0; i < data.length(); i++) {
+                    if (!data.isNull(i)){
+                        JSONObject sobj = data.getJSONObject(i);
+
+                        StaffUpdated item = new StaffUpdated();
+                        item.setId(sobj.getInt(Keys.KEY_ID));
+                        Date date = format.parse(sobj.getString(Keys.KEY_DATE_UPDATED));
+                        item.setUpdated_at(date);
+                        list.add(item);
+                    }
+                }
+                return list;
+            }else
+                return null;
+        } catch (JSONException e) {
+            G.e("4: " + e.getMessage());
+            return null;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static Student parseStudent(String content){
         try {
             JSONObject obj = new JSONObject(content);
@@ -143,15 +263,9 @@ public class JSONParser {
             Student student = new Student();
             student.setFirst_name(sobj.getString(Keys.KEY_FIRST_NAME));
             student.setLast_name(sobj.getString(Keys.KEY_LAST_NAME));
-
-            if (sobj.has(Keys.KEY_PHONE_NUMBER))
-                student.setPhone_number(sobj.getString(Keys.KEY_PHONE_NUMBER));
-
-            if (sobj.has(Keys.KEY_NATIONAL_CODE))
-                student.setNational_code(sobj.getString(Keys.KEY_NATIONAL_CODE));
-
-            if (sobj.has(Keys.KEY_GRADE))
-                student.setGrade(sobj.getString(Keys.KEY_GRADE));
+            student.setNational_code(sobj.getString(Keys.KEY_NATIONAL_CODE));
+            student.setGroup_id(sobj.getInt(Keys.KEY_GROUP_ID));
+            student.setStudent(sobj.getBoolean(Keys.KEY_IS_STUDENT));
 
             return student;
 
@@ -178,6 +292,9 @@ public class JSONParser {
                         workbook.setMonth(wobj.getString(Keys.KEY_MONTH));
                         workbook.setGrades(wobj.getString(Keys.KEY_GRADES));
                         workbook.setLessons(wobj.getString(Keys.KEY_LESSONS));
+                        workbook.setScale(wobj.getInt(Keys.KEY_SCALE));
+                        workbook.setCreated_at(wobj.getString(Keys.KEY_CREATED_AT));
+                        workbook.setUpdated_at(wobj.getString(Keys.KEY_DATE_UPDATED));
                         workbookList.add(workbook);
                     }
                 }
@@ -188,26 +305,6 @@ public class JSONParser {
         } catch (JSONException e) {
             e.printStackTrace();
             G.e("6: " + e.getMessage());
-            return null;
-        }
-    }
-
-    public static Post parsePost(String content){
-        try {
-            JSONObject obj = new JSONObject(content);
-            JSONObject pobj = obj.getJSONArray(Keys.KEY_DATA).getJSONObject(0);
-
-            Post post = new Post();
-            post.setId(pobj.getInt(Keys.KEY_ID));
-            post.setTitle(pobj.getString(Keys.KEY_TITLE));
-            post.setContent(pobj.getString(Keys.KEY_CONTENT));
-            post.setPreview(pobj.getString(Keys.KEY_PREVIEW));
-            post.setDate(pobj.getString(Keys.KEY_DATE_UPDATED));
-            return post;
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            G.e("7: " + e.getMessage());
             return null;
         }
     }

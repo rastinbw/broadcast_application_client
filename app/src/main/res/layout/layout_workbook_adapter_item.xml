@@ -5,51 +5,47 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginTop="8dp"
-    app:cardCornerRadius="6dp"
-    android:layout_marginBottom="3dp"
-    >
+    android:layout_marginBottom="1dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:clickable="true"
         android:focusable="true"
         android:background="?android:attr/selectableItemBackground"
         android:id="@+id/rtlListItem"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="5dp">
-
-        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-            android:id="@+id/txtLesson"
-            android:textSize="17sp"
-            android:gravity="right"
-            android:textColor="@color/colorPrimaryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            app:fontTextView="shabnam_bold.ttf"
-            android:layout_toRightOf="@+id/txtGrade"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+        android:layout_height="wrap_content">
 
         <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
             android:id="@+id/txtGrade"
-            android:background="@drawable/shape_circle_grade"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
             app:fontTextView="shabnam_bold.ttf"
-            android:textSize="14sp"
+            android:textSize="17sp"
             android:gravity="center"
-            android:textColor="#ffffff"
-            android:layout_marginLeft="5dp"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:src="@color/divider"/>
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/txtLesson"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            app:fontTextView="shabnam_bold.ttf"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryText"
+            android:layout_margin="5dp"/>
 
 
-    </RelativeLayout>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
 

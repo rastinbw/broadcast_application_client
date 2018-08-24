@@ -60,14 +60,14 @@ public class FavoriteProgramListFragment extends Fragment {
 
         favoriteAdapter = new FavoriteProgramAdapter(
                 getActivity(),
-                RealmController.getInstance().getAllFavoritePrograms()
+                G.realmController.getAllFavoritePrograms()
         );
 
         favoriteAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
-                    FavoriteProgram fp = RealmController.getInstance().getAllFavoritePrograms().get(position);
+                    FavoriteProgram fp = G.realmController.getAllFavoritePrograms().get(position);
                     if (fp != null){
                         if (G.isNetworkAvailable(getActivity())){
                             Intent intent = new Intent(getActivity(), ProgramDisplayActivity.class);
@@ -118,7 +118,7 @@ public class FavoriteProgramListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (currentId != null){
-            if (!RealmController.getInstance().hasFavoriteProgram(currentId)) {
+            if (!G.realmController.hasFavoriteProgram(currentId)) {
                 favoriteAdapter.notifyItemRemoved(currentPosition);
                 if (favoriteAdapter.getItemCount() <= 0)
                     txtNoProgram.setVisibility(View.VISIBLE);
@@ -181,7 +181,7 @@ public class FavoriteProgramListFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if (searchView.getQuery().length() == 0) {
-                    favoriteAdapter.setRealmResults(RealmController.getInstance().getAllFavoritePrograms());
+                    favoriteAdapter.setRealmResults(G.realmController.getAllFavoritePrograms());
                     favoriteAdapter.notifyDataSetChanged();
 
                     if (favoriteAdapter.getItemCount() <= 0)
@@ -193,7 +193,7 @@ public class FavoriteProgramListFragment extends Fragment {
             }
 
             void callSearch(String query) {
-                favoriteAdapter.setRealmResults(RealmController.getInstance().getFavoriteProgramWithTitle(query));
+                favoriteAdapter.setRealmResults(G.realmController.getFavoriteProgramWithTitle(query));
                 favoriteAdapter.notifyDataSetChanged();
 
                 if (favoriteAdapter.getItemCount() <= 0)

@@ -124,7 +124,7 @@ public class SupportFragment extends Fragment {
         params.put(Keys.KEY_TITLE,edtMessageTitle.getText().toString());
         params.put(Keys.KEY_MESSAGE,edtMessageText.getText().toString());
         params.put(Keys.KEY_EMAIL,edtMessageEmail.getText().toString());
-        params.put(Keys.KEY_TOKEN, RealmController.getInstance().getUserToken().getToken());
+        params.put(Keys.KEY_TOKEN, G.realmController.getUserToken().getToken());
         changeState(0);
 
         new Handler().postDelayed(new Runnable() {

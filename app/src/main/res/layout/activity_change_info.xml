@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.other.WorkbookActivity">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_check_toolbar" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="@color/colorPrimaryText"
+                        app:fontTextView="shabnam.ttf"
+                        android:textSize="15sp"
+                        android:text="@string/group_2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="1dp"/>
+
+                    <org.angmarch.views.NiceSpinner
+                        android:id="@+id/spnGroups"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtGroupsError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/validation_error_group"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        app:fontTextView="shabnam.ttf"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="@color/colorPrimaryText"
+                        app:fontTextView="shabnam.ttf"
+                        android:textSize="15sp"
+                        android:text="@string/first_name_2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="1dp"/>
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:inputType="text"
+                        android:gravity="center"
+                        app:fontEditText="shabnam.ttf"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:textAppearance="?android:textAppearanceSmall" >
+
+                        <requestFocus/>
+                    </com.mahta.rastin.broadcastapplication.custom.EditTextPlus>
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtMessageFirstNameError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/validation_error_first_name"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        app:fontTextView="shabnam.ttf"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="@color/colorPrimaryText"
+                        app:fontTextView="shabnam.ttf"
+                        android:textSize="15sp"
+                        android:text="@string/last_name_2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="1dp"/>
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtLatName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        android:inputType="text"
+                        android:gravity="center"
+                        app:fontEditText="shabnam.ttf"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtMessageLastNameError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/validation_error_last_name"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        app:fontTextView="shabnam.ttf"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlNationalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp">
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="@color/colorPrimaryText"
+                        app:fontTextView="shabnam.ttf"
+                        android:textSize="15sp"
+                        android:text="@string/national_code_2"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="1dp"/>
+
+                    <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
+                        android:id="@+id/edtNationalCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:padding="5dp"
+                        app:fontEditText="shabnam.ttf"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:background="@drawable/shape_rounded_edit_text_secondary"
+                        android:textAppearance="?android:textAppearanceSmall" />
+
+                    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                        android:visibility="gone"
+                        android:id="@+id/txtNationalCodeError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/validation_error_national_code"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        app:fontTextView="shabnam.ttf"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/btnConfirm"
+                android:background="@drawable/shape_confirm_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp">
+
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirm"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    app:fontTextView="shabnam_bold.ttf"/>
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/loaderLogo"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:indicatorName="LineScaleIndicator"
+                    app:indicatorColor="#ffffff"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

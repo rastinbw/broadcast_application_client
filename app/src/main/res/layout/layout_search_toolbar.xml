@@ -4,7 +4,8 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    >
 
     <LinearLayout
         android:orientation="horizontal"

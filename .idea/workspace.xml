@@ -28,25 +28,119 @@
       <config>
         <devices>
           <device id="Nexus One" />
-          <device id="Galaxy Nexus" />
-          <device id="pixel" />
           <device id="Nexus 5" />
+          <device id="pixel" />
           <device id="Nexus 7" />
+          <device id="Nexus S" />
+          <device id="Galaxy Nexus" />
+          <device id="Nexus 4" />
+          <device id="Nexus 6P" />
           <device id="pixel_2" />
           <device id="pixel_xl" />
-          <device id="Nexus S" />
-          <device id="Nexus 5X" />
-          <device id="pixel_2_xl" />
         </devices>
+        <pickBest>false</pickBest>
       </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="mahta" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4549c03e-21e9-4c3f-aeb0-77680cf390ec" name="Default" comment="" />
+    <list default="true" id="4549c03e-21e9-4c3f-aeb0-77680cf390ec" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/StaffListFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/ImageSliderAdapter.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/custom/TouchImageView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Slider.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_staff_list.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_slider_item.xml" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_5_2_jar.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteMediaListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteMediaListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoritePostListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoritePostListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteProgramListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteProgramListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MediaListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MediaListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/PostListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/PostListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProfileFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProgramListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProgramListFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/SupportFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/SupportFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/ChangePasswordActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/ChangePasswordActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/SplashActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/SplashActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/WorkbookActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/WorkbookActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/PostContentFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/PostContentFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/ProgramContentFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/ProgramContentFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/ConfirmFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/EntranceFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/StartupActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/WorkbookAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/WorkbookAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/AuthorizationDialog.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/GroupListDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/GroupListDialog.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/PlayerDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/PlayerDialog.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Constant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Constant.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Keys.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Keys.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpCommand.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpCommand.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/JSONParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/JSONParser.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/RealmController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/RealmController.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Student.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Student.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/UserToken.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/UserToken.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Workbook.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Workbook.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/WorkbookTuple.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/WorkbookTuple.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/service/NotificationService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/service/NotificationService.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_startup.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_workbook.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_workbook.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_confirm.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_confirm.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_notification.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_notification.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_search_toolbar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_search_toolbar.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_simple_toolbar_2.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_simple_toolbar_2.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_workbook_adapter_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_workbook_adapter_item.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+    </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,24 +173,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fragment_confirm.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_confirm.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="G.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="202">
+              <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -108,10 +189,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
-        <option value="resourceFile" />
-        <option value="Class" />
-        <option value="layoutResourceFile" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -131,10 +213,12 @@
       <find>hall</find>
       <find>mNetworkReceiver</find>
       <find>:</find>
-      <find>group</find>
       <find>MyNotification</find>
       <find>post</find>
       <find>Media</find>
+      <find>تماس</find>
+      <find>group</find>
+      <find>RealmController.getInstance()</find>
     </findStrings>
     <replaceStrings>
       <replace>data</replace>
@@ -151,13 +235,14 @@
       <replace>group</replace>
       <replace>Program</replace>
       <replace>program</replace>
+      <replace>G.realmController</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app</dir>
     </dirStrings>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="$USER_HOME$/Desktop/my_key.jks" />
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/Projects/my_key.jks" />
     <option name="KEY_ALIAS" value="DGR" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
@@ -1731,8 +1816,8 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/compilerCommon/3.1.2/be65c11ded4242932046f23ecfa5c7ccb0e98f46/compilerCommon-3.1.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.2.0/3d425bfaaa7f8b1affb652c4257aa57e6597e163/kotlin-stdlib-jre8-1.2.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.2.0/505f55b9619bbc5f5e26c77427dd24a6a441eef1/kotlin-stdlib-jre8-1.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/f18536c1fe08673c69e869be170759616a9df16/transform-api-2.0.0-deprecated-use-gradle-api-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/47f6c56527c42425742fa9b56ffd3fd80763fe03/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/e4075c49e16e086140fe40eea56b2de7516874ee/transform-api-2.0.0-deprecated-use-gradle-api-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/85bee1acea9e27152b920746c68133b30b11431/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.1/81e81bd6c20b965f88d0462e2559f8759fc6c26d/asm-5.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.1/5ef31c4fe953b1fd00b8a88fa1d6820e8785bb45/asm-5.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/5.1/81e81bd6c20b965f88d0462e2559f8759fc6c26d/asm-analysis-5.1-sources.jar" />
@@ -1890,8 +1975,8 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/compilerCommon/3.1.2/be65c11ded4242932046f23ecfa5c7ccb0e98f46/compilerCommon-3.1.2.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.2.0/3d425bfaaa7f8b1affb652c4257aa57e6597e163/kotlin-stdlib-jre8-1.2.0-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre8/1.2.0/505f55b9619bbc5f5e26c77427dd24a6a441eef1/kotlin-stdlib-jre8-1.2.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/f18536c1fe08673c69e869be170759616a9df16/transform-api-2.0.0-deprecated-use-gradle-api-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/47f6c56527c42425742fa9b56ffd3fd80763fe03/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/e4075c49e16e086140fe40eea56b2de7516874ee/transform-api-2.0.0-deprecated-use-gradle-api-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/85bee1acea9e27152b920746c68133b30b11431/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.1/81e81bd6c20b965f88d0462e2559f8759fc6c26d/asm-5.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.1/5ef31c4fe953b1fd00b8a88fa1d6820e8785bb45/asm-5.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/5.1/81e81bd6c20b965f88d0462e2559f8759fc6c26d/asm-analysis-5.1-sources.jar" />
@@ -2353,64 +2438,68 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_group_adapter_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteProgramListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoritePostListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteMediaListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/service/NotificationService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/service/NetworkWatcher.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/shape_search_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_post_adapter_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_program_adapter_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_listview_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/PostContentFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/WebFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/ProgramContentFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/FavoriteProgramAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite_media_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite_post_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite_program_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/GroupSpinnerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/AuthorizationDialog.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/selector.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/selector_pin.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_authorize.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_media_adapter_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_player_dialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_workbook_adapter_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_program_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_check_dialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_simple_toolbar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/PostListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MediaListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProgramListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/ChangePasswordActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/DateConverter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/ProgramAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_group_list_dialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Keys.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/EntranceFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/ChangeInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_search_toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_simple_toolbar_2.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_check_toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_confirm.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_change_password.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/ChangePasswordActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpCommand.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/UserToken.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/LoginAsParentFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/LoginFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/GroupListDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/RealmController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_login_as_parent.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_forget_password.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/ForgetPasswordFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/RegisterFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/shape_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_right_24dp.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_left_24dp.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_workbook_adapter_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/WorkbookTuple.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/WorkbookAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Workbook.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/shape_border.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/SplashActivity.java" />
-        <option value="$PROJECT_DIR$/vitamio/build.gradle" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/PlayerDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/WorkbookActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_workbook.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/RegistrationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/registration/ConfirmFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProfileFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Student.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/JSONParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Keys.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/UpdateInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_change_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1365" />
-    <option name="width" value="1282" />
-    <option name="height" value="1025" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="39" />
+    <option name="y" value="196" />
+    <option name="width" value="994" />
+    <option name="height" value="561" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
@@ -2427,6 +2516,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
@@ -2439,13 +2566,20 @@
             <path>
               <item name="BroadcastApplication" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
               <item name="BroadcastApplication" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="broadcastapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BroadcastApplication" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="broadcastapplication" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BroadcastApplication" type="1abcf292:AndroidViewProjectNode" />
@@ -2455,24 +2589,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BroadcastApplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BroadcastApplication" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BroadcastApplicationAdmin" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Projects/my_key.jks" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="3300d85f1c2a3367" />
@@ -2495,9 +2617,9 @@
       <recent name="$PROJECT_DIR$/app/src/main" />
     </key>
     <key name="android.template.packageName">
+      <recent name="com.mahta.rastin.broadcastapplication.activity.other" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.post_display" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.splash" />
-      <recent name="com.mahta.rastin.broadcastapplication.activity.other" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.workbook_content" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.startup" />
     </key>
@@ -2505,6 +2627,7 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mahta.rastin.broadcastapplication.activity.registration" />
       <recent name="com.mahta.rastin.broadcastapplication.adapter" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.main" />
       <recent name="com.mahta.rastin.broadcastapplication.activity.post_display" />
@@ -2701,7 +2824,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1365" y="0" width="1282" height="1025" extended-state="6" />
+    <frame x="39" y="196" width="994" height="561" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32988358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2710,16 +2833,14 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6368078" sideWeight="0.507722" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23166023" sideWeight="0.4954722" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22321428" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45676997" sideWeight="0.49227798" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901555" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22279793" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51943004" sideWeight="0.49227798" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3484603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26101142" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23784356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2889318" sideWeight="0.5045278" order="9" side_tool="true" content_ui="tabs" />
@@ -2730,417 +2851,30 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25906736" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="false" weight="0.32947233" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1465" y="100" width="1402" height="701" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368082" sideWeight="0.4954722" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32642487" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729626" sideWeight="0.502574" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2587322" sideWeight="0.497426" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41138422" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2889318" sideWeight="0.5045278" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="false" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="1465" y="100" width="1402" height="701" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22329472" sideWeight="0.4954722" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858992" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18790218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988358" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/ProgramAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_group_list_dialog.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_spinner_item.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/MyNotification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/shape_button_secondary.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/FavoriteMediaListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/ConfirmFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="106" column="52" lean-forward="false" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_entrance.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="127" column="53" lean-forward="false" selection-start-line="127" selection-start-column="53" selection-end-line="127" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_support.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/SupportFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/ProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="136" column="44" lean-forward="false" selection-start-line="136" selection-start-column="44" selection-end-line="136" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="181" column="50" lean-forward="false" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-27/android/media/MediaPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="1124" column="16" lean-forward="false" selection-start-line="1124" selection-start-column="16" selection-end-line="1124" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/post_display/ProgramContentFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="84" column="60" lean-forward="false" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="38" lean-forward="true" selection-start-line="0" selection-start-column="38" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/vitamio/build.gradle" />
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-27/android/widget/AbsSeekBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="494" column="29" lean-forward="false" selection-start-line="494" selection-start-column="29" selection-end-line="494" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vitamio/src/io/vov/vitamio/MediaPlayer.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/MediaAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MediaListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/other/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_startup.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/custom/ButtonPlus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/DateConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2003">
-          <caret line="188" column="16" lean-forward="false" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="135" column="51" lean-forward="false" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/HttpCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="96" column="86" lean-forward="false" selection-start-line="96" selection-start-column="86" selection-end-line="96" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/startup/EntranceFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="165" column="39" lean-forward="false" selection-start-line="165" selection-start-column="39" selection-end-line="165" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/interfaces/EndlessRecyclerViewScrollListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/adapter/FavoritePostAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="20" column="59" lean-forward="false" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/Keys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/model/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/JSONParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/activity/main/PostListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="131" column="42" lean-forward="false" selection-start-line="131" selection-start-column="42" selection-end-line="131" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/helper/RealmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vitamio/build.gradle" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/dialog/PlayerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/mahta/rastin/broadcastapplication/global/G.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_search_toolbar.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_confirm.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="202">
+          <caret line="52" column="56" lean-forward="false" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
           <folding />
         </state>
       </provider>

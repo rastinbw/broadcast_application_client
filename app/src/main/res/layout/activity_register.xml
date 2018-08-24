@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.startup.StartupActivity">
+    tools:context=".activity.registration.RegistrationActivity">
 
     <FrameLayout
-        android:id="@+id/frmStartupContainer"
+        android:id="@+id/frmRegistrationContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

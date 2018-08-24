@@ -124,13 +124,13 @@ public class ProgramListFragment extends Fragment implements SwipeRefreshLayout.
         lnlLoading = view.findViewById(R.id.lnlLoading);
         lnlNoNetwork = view.findViewById(R.id.lnlNoNetwork);
 
-        adapter = new ProgramAdapter(getActivity(), RealmController.getInstance().getAllPrograms());
+        adapter = new ProgramAdapter(getActivity(), G.realmController.getAllPrograms());
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
                     Intent intent = new Intent(getActivity(), ProgramDisplayActivity.class);
-                    intent.putExtra(Keys.KEY_EXTRA_FLAG,RealmController.getInstance().getAllPrograms().get(position));
+                    intent.putExtra(Keys.KEY_EXTRA_FLAG,G.realmController.getAllPrograms().get(position));
                     startActivity(intent);
                 }else {
                     G.toastLong(G.getStringFromResource(R.string.no_internet, getActivity()), getActivity());
@@ -283,7 +283,7 @@ public class ProgramListFragment extends Fragment implements SwipeRefreshLayout.
                             if (programs != null) {
                                 for (Program program : programs) {
                                     G.i(program.getId() + "");
-                                    RealmController.getInstance().addProgram(program);
+                                    G.realmController.addProgram(program);
                                 }
                                 adapter.notifyItemRangeInserted(start - 1, programs.size());
 
@@ -339,7 +339,7 @@ public class ProgramListFragment extends Fragment implements SwipeRefreshLayout.
     }
 
     private void clearPrograms(){
-        RealmController.getInstance().clearAllPrograms();
+        G.realmController.clearAllPrograms();
     }
 
     @Override

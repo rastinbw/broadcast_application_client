@@ -5,7 +5,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:orientation="vertical"
-tools:context=".activity.startup.ConfirmFragment">
+tools:context=".activity.registration.ConfirmFragment">
 
 <LinearLayout
     android:background="@color/colorPlatinum"
@@ -31,27 +31,38 @@ tools:context=".activity.startup.ConfirmFragment">
             android:paddingBottom="20dp"
             android:scaleType="fitXY"/>
 
-        <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
-            android:id="@+id/edtPhoneNumber"
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="4dp"
-            android:textColor="@color/colorSecondaryText"
-            android:background="@drawable/shape_rounded_edit_text"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:inputType="phone"
-            app:fontEditText="shabnam.ttf"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:hint="@string/phone_number"
-            android:layout_alignParentBottom="true"/>
+            android:itemBackground="#FFFFFF"
+            style="@style/PinWidget.PinView"
+            android:cursorVisible="true"
+            android:hint="@string/verification_code"
+            android:inputType="number"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cursorColor="@color/colorPrimaryText"
+            app:cursorWidth="2dp"
+            app:itemCount="4"
+            app:itemHeight="48dp"
+            app:itemRadius="4dp"
+            app:itemSpacing="5dp"
+            app:itemWidth="48dp"
+            app:lineColor="@drawable/selector_pin"
+            app:lineWidth="2dp"
+            app:viewType="rectangle" />
 
     </RelativeLayout>
 
 
     <com.andexert.library.RippleView
-        android:id="@+id/btnSendPassword"
+        android:id="@+id/btnSendVerification"
         android:layout_gravity="center"
         android:layout_width="310dp"
         android:layout_height="40dp"
@@ -66,19 +77,19 @@ tools:context=".activity.startup.ConfirmFragment">
             android:layout_height="match_parent">
 
             <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-                android:id="@+id/txtSendPassword"
+                android:id="@+id/txtSendVerification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/send_password"
+                android:text="@string/send_verification_code"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/colorPrimaryText"
+                android:textColor="#ffffff"
                 android:layout_centerInParent="true"
                 app:fontTextView="shabnam.ttf"/>
 
             <LinearLayout
                 android:visibility="gone"
                 android:id="@+id/lnlSeconds"
-                android:layout_toLeftOf="@+id/txtSendPassword"
+                android:layout_toLeftOf="@+id/txtSendVerification"
                 android:layout_marginRight="5dp"
                 android:layout_centerVertical="true"
                 android:orientation="horizontal"
@@ -117,21 +128,20 @@ tools:context=".activity.startup.ConfirmFragment">
 
     </com.andexert.library.RippleView>
 
-    <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:gravity="right"
-        android:id="@+id/txtMessage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:layout_marginBottom="20dp"/>
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:visibility="gone"
+            android:id="@+id/loaderLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="LineScaleIndicator" />
 
         <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
             android:gravity="center"

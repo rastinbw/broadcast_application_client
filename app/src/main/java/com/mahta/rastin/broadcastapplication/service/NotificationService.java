@@ -71,6 +71,7 @@ public class NotificationService extends Service {
             NOTIFICATION_CHANNEL_ID = createNotificationChannel();
         }
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+//        Notification.Builder notificationBuilder = new Notification.Builder(this);
 
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
@@ -201,6 +202,7 @@ public class NotificationService extends Service {
         }
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+//        Notification.Builder notificationBuilder = new Notification.Builder(this);
 
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)

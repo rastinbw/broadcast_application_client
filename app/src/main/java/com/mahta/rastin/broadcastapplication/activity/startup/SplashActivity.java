@@ -1,9 +1,10 @@
-package com.mahta.rastin.broadcastapplication.activity.other;
+package com.mahta.rastin.broadcastapplication.activity.startup;
 
+import android.app.FragmentTransaction;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +13,18 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import com.mahta.rastin.broadcastapplication.R;
 import com.mahta.rastin.broadcastapplication.activity.main.MainActivity;
-import com.mahta.rastin.broadcastapplication.activity.startup.StartupActivity;
+import com.mahta.rastin.broadcastapplication.activity.registration.ConfirmFragment;
+import com.mahta.rastin.broadcastapplication.activity.registration.RegistrationActivity;
 import com.mahta.rastin.broadcastapplication.global.Constant;
 import com.mahta.rastin.broadcastapplication.global.G;
+import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.helper.HttpCommand;
 import com.mahta.rastin.broadcastapplication.helper.JSONParser;
 import com.mahta.rastin.broadcastapplication.helper.RealmController;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.Group;
 import com.mahta.rastin.broadcastapplication.service.NotificationService;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -36,34 +40,6 @@ public class SplashActivity extends AppCompatActivity {
         setLocale(new Locale("en"));
         setContentView(R.layout.activity_splash);
 
-//        bandwidthMeter = new DefaultBandwidthMeter();
-//        extractorsFactory = new DefaultExtractorsFactory();
-//
-//        trackSelectionFactory = new AdaptiveTrackSelection.Factory(bandwidthMeter);
-//
-//        trackSelector = new DefaultTrackSelector(trackSelectionFactory);
-//
-///*        dataSourceFactory = new DefaultDataSourceFactory(this,
-//                Util.getUserAgent(this, "mediaPlayerSample"),
-//                (TransferListener<? super DataSource>) bandwidthMeter);*/
-//
-//        defaultBandwidthMeter = new DefaultBandwidthMeter();
-//        dataSourceFactory = new DefaultDataSourceFactory(this,
-//                Util.getUserAgent(this, "mediaPlayerSample"), defaultBandwidthMeter);
-//
-//
-//        mediaSource = new ExtractorMediaSource(Uri.parse("https://schoolbroadcastpanel.ir/uploads/./2dfd2157e30a625c5f53ef0376e8afb7.ogg"), dataSourceFactory, extractorsFactory, null, null);
-//
-//        player = ExoPlayerFactory.newSimpleInstance(this, trackSelector);
-//
-//
-//        player.prepare(mediaSource);
-//        player.setPlayWhenReady(true);
-
-
-
-        if (RealmController.getInstance().hasGroup())
-            isDataReceived = true;
 
         if (G.isNetworkAvailable(getApplicationContext())) {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
@@ -102,15 +78,18 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, Constant.SPLASH_TIME);
 
+        checkToken();
+
         if (!isDataReceived) {
             new HttpCommand(HttpCommand.COMMAND_GET_GROUP_LIST, null)
                     .setOnResultListener(new OnResultListener() {
                         @Override
                         public void onResult(String result) {
+                            G.realmController.clearAllGroups();
                             List<Group> list = JSONParser.parseGroups(result);
                             if (list != null) {
                                 for (Group group : list) {
-                                    RealmController.getInstance().addGroup(group);
+                                    G.realmController.addGroup(group);
                                     G.i(group.getTitle());
                                 }
                             }
@@ -125,9 +104,27 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void go(){
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, RegistrationActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void checkToken(){
+        if (G.isUserSignedIn()){
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(Keys.KEY_TOKEN,G.realmController.getUserToken().getToken());
+            new HttpCommand(HttpCommand.COMMAND_CHECK_TOKEN,contentValues)
+                    .setOnResultListener(new OnResultListener() {
+                        @Override
+                        public void onResult(String result) {
+                            int resultCode = JSONParser.getResultCodeFromJson(result);
+                            if (resultCode == Keys.RESULT_INVALID_TOKEN){
+                                G.realmController.removeUserToken();
+                                G.realmController.removeStudent();
+                            }
+                        }
+                    }).execute();
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -144,5 +141,6 @@ public class SplashActivity extends AppCompatActivity {
             resources.updateConfiguration(configuration,displayMetrics);
         }
     }
+
 
 }

@@ -88,7 +88,7 @@ public class PostContentFragment extends Fragment {
         });
 
         btnFavorite =  toolbar.findViewById(R.id.btnFavorite);
-        if (RealmController.getInstance().hasFavoritePost(currentPost.getId()))
+        if (G.realmController.hasFavoritePost(currentPost.getId()))
             btnFavorite.setLiked(true);
 
             btnFavorite.setOnLikeListener(new OnLikeListener() {
@@ -97,13 +97,13 @@ public class PostContentFragment extends Fragment {
                 G.i("adding " +  (currentPost.getId()));
                 isLiked = true;
                 FavoritePost favoritePost = new FavoritePost(currentPost);
-                RealmController.getInstance().addFavoritePost(favoritePost);
+                G.realmController.addFavoritePost(favoritePost);
             }
 
             @Override
             public void unLiked(LikeButton likeButton) {
                 isLiked = false;
-                RealmController.getInstance().removeFavoritePost(
+                G.realmController.removeFavoritePost(
                         (currentPost.getId())
                 );
             }

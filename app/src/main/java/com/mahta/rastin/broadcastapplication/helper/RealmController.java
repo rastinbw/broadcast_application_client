@@ -1,6 +1,8 @@
 package com.mahta.rastin.broadcastapplication.helper;
 
 
+import android.content.Context;
+
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.model.FavoriteMedia;
@@ -10,6 +12,9 @@ import com.mahta.rastin.broadcastapplication.model.Group;
 import com.mahta.rastin.broadcastapplication.model.Media;
 import com.mahta.rastin.broadcastapplication.model.Post;
 import com.mahta.rastin.broadcastapplication.model.Program;
+import com.mahta.rastin.broadcastapplication.model.Slider;
+import com.mahta.rastin.broadcastapplication.model.Staff;
+import com.mahta.rastin.broadcastapplication.model.Student;
 import com.mahta.rastin.broadcastapplication.model.UserToken;
 
 import java.util.List;
@@ -21,28 +26,19 @@ import io.realm.RealmResults;
 import io.realm.Sort;
 
 public class RealmController {
-    
-    private static RealmController instance = new RealmController();
-    private final Realm realm = Realm.getInstance(
-                     new RealmConfiguration.Builder()
-                    .name("com_mahta_rastin_broadcastapplication" + ".realm")
-                    .build());
+    private Realm realm;
 
-    private RealmController(){
-        if(instance!=null){
-            throw new IllegalStateException("Already instantiated");
-        }
-    }
-
-    public static RealmController getInstance(){
-        return instance;
+    public RealmController(Context context){
+        realm = Realm.getInstance(
+                new RealmConfiguration.Builder()
+                        .name(context.getPackageName() + ".realm")
+                        .build());
     }
 
     public Realm getRealm() {
         return realm;
     }
 
-    //Refresh the realm instance
     public void refresh() {
         realm.refresh();
     }
@@ -61,10 +57,11 @@ public class RealmController {
     }
 
     //add a UserToken to Realm
-    public void addUserToken(UserToken userToken){
+    public void addUserToken(UserToken userToken, boolean isParent){
         //Because each user can only have one UserToken
         removeUserToken();
 
+        userToken.setParent(isParent);
         userToken.setId((int) (Math.random()*100));
         realm.beginTransaction();
         realm.copyToRealm(userToken);
@@ -75,6 +72,38 @@ public class RealmController {
     public void removeUserToken() {
         realm.beginTransaction();
         RealmResults<UserToken> result = realm.where(UserToken.class).findAll();
+        result.deleteAllFromRealm();
+        realm.commitTransaction();
+    }
+
+    /***********************************************************************************************
+     * This Section Will Handle CRUD operation on Student Model
+     **********************************************************************************************/
+    //find all objects in the UserToken.class
+    public Student getStudent() {
+        return realm.where(Student.class).findFirst();
+    }
+
+    //check if UserToken.class is empty
+    public boolean hasStudent() {
+        return !realm.where(Student.class).findAll().isEmpty();
+    }
+
+    //add a UserToken to Realm
+    public void addStudent(Student student){
+        //Because each user can only have one UserToken
+        removeStudent();
+
+        student.setId((int) (Math.random()*100));
+        realm.beginTransaction();
+        realm.copyToRealm(student);
+        realm.commitTransaction();
+    }
+
+    //remove UserToken from realm
+    public void removeStudent() {
+        realm.beginTransaction();
+        RealmResults<Student> result = realm.where(Student.class).findAll();
         result.deleteAllFromRealm();
         realm.commitTransaction();
     }
@@ -99,8 +128,12 @@ public class RealmController {
         realm.commitTransaction();
     }
 
+    public Group getGroup(int id){
+        return realm.where(Group.class).equalTo("id", id).findFirst();
+    }
+
     //remove UserToken from realm
-    public void clearGroup() {
+    public void clearAllGroups() {
         realm.beginTransaction();
         RealmResults<Group> result = realm.where(Group.class).findAll();
         result.deleteAllFromRealm();
@@ -188,6 +221,53 @@ public class RealmController {
     public void addProgram(Program program){
         realm.beginTransaction();
         realm.copyToRealm(program);
+        realm.commitTransaction();
+    }
+
+    /***********************************************************************************************
+     * This Section Will Handle CRUD operation on Staff Model
+     **********************************************************************************************/
+    //find all objects in the Post.class
+    public RealmResults<Staff> getAllStaff() {
+        return realm.where(Staff.class).findAll().sort(Keys.KEY_ID, Sort.ASCENDING);
+    }
+
+    //check if Post.class is empty
+    public boolean hasStaff() {
+        return !realm.where(Staff.class).findAll().isEmpty();
+    }
+
+    //check if Post.class is empty
+    public boolean hasStaff(int id) {
+        return realm.where(Staff.class).equalTo("id", id).findFirst() != null;
+    }
+
+    //check if Post.class is empty
+    public Staff getStaff(int id) {
+        return realm.where(Staff.class).equalTo("id", id).findFirst();
+    }
+
+    //check if Post.class is empty
+    public void removeStaff(int id) {
+        realm.beginTransaction();
+        RealmResults<Staff> result = realm.where(Staff.class)
+                .equalTo(Keys.KEY_ID, id).findAll();
+        result.deleteAllFromRealm();
+        realm.commitTransaction();
+    }
+
+    //clear all objects from Post.class
+    public void clearAllStaffs() {
+        realm.beginTransaction();
+        RealmResults<Staff> result = realm.where(Staff.class).findAll();
+        result.deleteAllFromRealm();
+        realm.commitTransaction();
+    }
+
+    //add a Post to Realm
+    public void addStaff(Staff staff){
+        realm.beginTransaction();
+        realm.copyToRealm(staff);
         realm.commitTransaction();
     }
 
@@ -339,6 +419,36 @@ public class RealmController {
         result.deleteAllFromRealm();
         realm.commitTransaction();
         G.i("Removing " + id);
+    }
+
+    /***********************************************************************************************
+     * This Section Will Handle CRUD operation on Slider Model
+     **********************************************************************************************/
+    //find all objects in the UserToken.class
+    public Slider getSlider() {
+        return realm.where(Slider.class).findFirst();
+    }
+
+    //check if UserToken.class is empty
+    public boolean hasSlider() {
+        return !realm.where(Slider.class).findAll().isEmpty();
+    }
+
+    //add a UserToken to Realm
+    public void addSlider(Slider slider){
+        //Because each user can only have one slider
+        removeUserSlider();
+        realm.beginTransaction();
+        realm.copyToRealm(slider);
+        realm.commitTransaction();
+    }
+
+    //remove UserToken from realm
+    public void removeUserSlider() {
+        realm.beginTransaction();
+        RealmResults<Slider> result = realm.where(Slider.class).findAll();
+        result.deleteAllFromRealm();
+        realm.commitTransaction();
     }
 
 }

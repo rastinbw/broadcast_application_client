@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.stfalcon:smsverifycatcher-0.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smsverifycatcher-0.3.2.aar/1b44105e10931f488764d94fbdf8457e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smsverifycatcher-0.3.2.aar/1b44105e10931f488764d94fbdf8457e/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.stfalcon/smsverifycatcher/0.3.2/ca73fd21970936a6efeb8b01a14c00b83cfe6c30/smsverifycatcher-0.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

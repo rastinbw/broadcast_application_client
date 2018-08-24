@@ -111,7 +111,7 @@ public class PlayerDialog extends Dialog {
         seekBar = findViewById(R.id.seekBar);
 
         btnFavorite =  findViewById(R.id.btnFavorite);
-        if (RealmController.getInstance().hasFavoriteMedia(media.getId()))
+        if (G.realmController.hasFavoriteMedia(media.getId()))
             btnFavorite.setLiked(true);
 
         btnFavorite.setOnLikeListener(new OnLikeListener() {
@@ -120,12 +120,12 @@ public class PlayerDialog extends Dialog {
                 G.i("adding " +  (media.getId()));
 
                 FavoriteMedia favoriteMedia = new FavoriteMedia(media);
-                RealmController.getInstance().addFavoriteMedia(favoriteMedia);
+                G.realmController.addFavoriteMedia(favoriteMedia);
             }
 
             @Override
             public void unLiked(LikeButton likeButton) {
-                RealmController.getInstance().removeFavoriteMedia(
+                G.realmController.removeFavoriteMedia(
                         (media.getId())
                 );
             }

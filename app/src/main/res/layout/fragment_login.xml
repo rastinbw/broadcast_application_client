@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".activity.startup.EntranceFragment">
+    tools:context=".activity.registration.LoginFragment">
 
         <LinearLayout
             android:background="@color/colorPlatinum"
@@ -16,7 +16,7 @@
             <RelativeLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="180dp">
+                android:layout_height="200dp">
 
                 <ImageView
                     android:id="@+id/imgEntrance"
@@ -33,8 +33,10 @@
                     <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
                         android:id="@+id/edtNationalCode"
                         android:layout_gravity="center"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="40dp"
                         android:padding="4dp"
                         android:textColor="@color/colorSecondaryText"
                         android:hint="@string/national_code"
@@ -49,14 +51,14 @@
 
             </RelativeLayout>
 
-            <!--temporary disable password-->
             <com.mahta.rastin.broadcastapplication.custom.EditTextPlus
-                android:visibility="gone"
                 android:id="@+id/edtPassword"
                 android:layout_marginTop="15dp"
                 android:layout_gravity="center"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="40dp"
                 android:padding="4dp"
                 android:textColor="@color/colorSecondaryText"
                 android:hint="@string/password"
@@ -70,10 +72,12 @@
 
             <com.andexert.library.RippleView
                 android:id="@+id/btnEnterAsStudent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                android:layout_width="310dp"
+                android:layout_width="match_parent"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shape_button"
                 rv_centered="true"
@@ -83,7 +87,7 @@
                 <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/enter_as_student"
+                    android:text="@string/enter"
                     android:gravity="center"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="#ffffff"
@@ -91,56 +95,72 @@
 
             </com.andexert.library.RippleView>
 
-
-            <!--temporary disable guest-->
             <com.andexert.library.RippleView
-                android:visibility="gone"
-                android:id="@+id/btnEnterAsGuest"
+                android:id="@+id/btnEnterAsParent"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                android:layout_width="310dp"
+                android:layout_width="match_parent"
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"
                 android:layout_height="40dp"
                 android:background="@drawable/shape_button_secondary"
                 rv_centered="true"
-                app:rv_rippleDuration="120"
+                app:rv_rippleDuration="100"
                 app:rv_type="rectangle">
 
                 <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:text="@string/enter_as_parent"
                     android:gravity="center"
-                    android:text="@string/enter_as_guest"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="#ffffff"
                     app:fontTextView="shabnam.ttf"/>
 
             </com.andexert.library.RippleView>
 
-            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
+            <LinearLayout
                 android:gravity="right"
-                android:id="@+id/txtMessage"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:layout_marginBottom="20dp"
-                android:text="@string/message_for_juniors"/>
+                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_height="wrap_content">
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtForgetPassword"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forget_password"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    app:fontTextView="shabnam.ttf"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:text="|"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    app:fontTextView="shabnam.ttf"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                    android:id="@+id/txtRegister"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    app:fontTextView="shabnam.ttf"
+                    android:textColor="@color/colorPrimaryDark" />
 
 
-            <!--temporary disable authentication-->
-            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-                android:visibility="gone"
-                android:id="@+id/txtAuthorize"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/authorize"
-                android:gravity="center"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="15sp"
-                app:fontTextView="shabnam.ttf"
-                android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
 
 
             <RelativeLayout
@@ -152,6 +172,7 @@
                     android:visibility="gone"
                     android:id="@+id/loaderLogo"
                     android:layout_centerInParent="true"
+                    android:paddingBottom="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:indicatorName="LineScaleIndicator"

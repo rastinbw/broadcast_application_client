@@ -1,11 +1,31 @@
 package com.mahta.rastin.broadcastapplication.model;
 
-public class Student {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Student extends RealmObject {
+
+    @PrimaryKey
+    private int id;
+
     private String first_name;
+
     private String last_name;
+
     private String national_code;
-    private String grade;
-    private String phone_number;
+
+    private int group_id;
+
+    private boolean isStudent;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirst_name() {
         return first_name;
@@ -31,19 +51,19 @@ public class Student {
         this.national_code = national_code;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public int getGroup_id() {
+        return group_id;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setGroup_id(int group_id) {
+        this.group_id = group_id;
     }
 
-    public String getGrade() {
-        return grade;
+    public boolean isStudent() {
+        return isStudent;
     }
 
-    public void setGrade(String grade) {
-        this.grade = grade;
+    public void setStudent(boolean student) {
+        isStudent = student;
     }
 }

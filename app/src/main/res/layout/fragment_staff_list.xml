@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_simple_toolbar" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:visibility="gone"
+            android:id="@+id/txtNoStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorPrimaryText"
+            app:fontTextView="shabnam_bold.ttf"
+            android:text="@string/there_is_no_staff"/>
+
+        <LinearLayout
+            android:id="@+id/lnlLoading"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorName="LineScaleIndicator"
+                app:indicatorColor="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/loading"
+                android:textSize="14sp"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/lnlNoNetwork"
+            android:layout_marginBottom="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgCry"
+                android:src="@drawable/img_crying"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/network_error"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                app:fontTextView="shabnam_bold.ttf"/>
+
+        </LinearLayout>
+
+        <com.mahta.rastin.broadcastapplication.custom.ButtonPlus
+            android:visibility="gone"
+            android:text="@string/try_again"
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:background="@drawable/shape_button"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/lnlNoNetwork"
+            android:layout_centerHorizontal="true"
+            app:fontButton="shabnam_bold.ttf"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvStaff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

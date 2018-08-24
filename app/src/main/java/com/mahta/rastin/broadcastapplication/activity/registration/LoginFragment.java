@@ -1,12 +1,11 @@
-package com.mahta.rastin.broadcastapplication.activity.startup;
+package com.mahta.rastin.broadcastapplication.activity.registration;
 
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.widget.ImageView;
 
 import com.andexert.library.RippleView;
 import com.mahta.rastin.broadcastapplication.custom.TextViewPlus;
-import com.mahta.rastin.broadcastapplication.dialog.AuthorizationDialog;
 import com.mahta.rastin.broadcastapplication.custom.EditTextPlus;
 import com.mahta.rastin.broadcastapplication.R;
 import com.mahta.rastin.broadcastapplication.activity.main.MainActivity;
@@ -30,17 +28,18 @@ import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.UserToken;
 import com.wang.avi.AVLoadingIndicatorView;
 
-public class EntranceFragment extends Fragment {
+public class LoginFragment extends Fragment {
     private EditTextPlus edtNationalCode;
     private EditTextPlus edtPassword;
     private AVLoadingIndicatorView loaderLogo;
     private RippleView btnEnterAsStudent;
-    private RippleView btnEnterAsGuest;
-    private TextViewPlus txtAuthorize;
+    private RippleView btnEnterAsParent;
+    private TextViewPlus txtRegister;
+    private TextViewPlus txtForgetPassword;
     private boolean doesFragmentExists = true;
     private boolean isLoaded;
 
-    public EntranceFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
@@ -48,13 +47,13 @@ public class EntranceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_entrance, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
         setupView(view);
 
         return view;
     }
 
-    private void setupView(View view) {
+    private void setupView(final View view) {
         edtNationalCode = view.findViewById(R.id.edtNationalCode);
         edtPassword = view.findViewById(R.id.edtPassword);
         loaderLogo = view.findViewById(R.id.loaderLogo);
@@ -62,44 +61,60 @@ public class EntranceFragment extends Fragment {
         ((ImageView)view.findViewById(R.id.imgEntrance))
                 .setImageBitmap(G.getBitmapFromResources(getResources(), R.drawable.img_green_board));
 
-        btnEnterAsGuest = view.findViewById(R.id.btnEnterAsGuest);
-        btnEnterAsGuest.setOnClickListener(new View.OnClickListener() {
+        btnEnterAsParent = view.findViewById(R.id.btnEnterAsParent);
+        btnEnterAsParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                G.hideKeyboardFrom(getActivity(), view);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
-                        getActivity().finish();
+                        getFragmentManager().beginTransaction()
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                                .addToBackStack("LoginFragment")
+                                .replace(R.id.frmRegistrationContainer,new LoginAsParentFragment())
+                                .commit();
                     }
                 }, Constant.RIPPLE_EFFECT_DELAY);
             }
         });
-        if (( (StartupActivity)getActivity()).registerFromInside){
-            btnEnterAsGuest.setVisibility(View.GONE);
-        }
 
         btnEnterAsStudent = view.findViewById(R.id.btnEnterAsStudent);
         btnEnterAsStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                G.hideKeyboardFrom(getActivity(), view);
                 if (validate())
                     login();
             }
         });
 
-        txtAuthorize = view.findViewById(R.id.txtAuthorize);
-        txtAuthorize.setPaintFlags(txtAuthorize.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
-        txtAuthorize.setOnClickListener(new View.OnClickListener() {
+        txtRegister = view.findViewById(R.id.txtRegister);
+        txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AuthorizationDialog dialog = new AuthorizationDialog(getActivity());
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
+                G.hideKeyboardFrom(getActivity(), view);
+                getFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack("LoginFragment")
+                        .replace(R.id.frmRegistrationContainer,new RegisterFragment())
+                        .commit();
             }
         });
 
+        txtForgetPassword = view.findViewById(R.id.txtForgetPassword);
+        txtForgetPassword.setPaintFlags(txtForgetPassword.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        txtForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                G.hideKeyboardFrom(getActivity(), view);
+                getFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack("LoginFragment")
+                        .replace(R.id.frmRegistrationContainer,new ForgetPasswordFragment())
+                        .commit();
+            }
+        });
 
     }
 
@@ -109,15 +124,14 @@ public class EntranceFragment extends Fragment {
 
         String nationalCode = edtNationalCode.getText().toString();
 
-        // TODO: 7/29/18 validate password later
-//        String password = edtPassword.getText().toString();
-//
-//        if (password.isEmpty()) {
-//            edtPassword.setError(G.getStringFromResource(R.string.validation_error_password, getActivity()));
-//            valid = false;
-//        } else {
-//            edtPassword.setError(null);
-//        }
+        String password = edtPassword.getText().toString();
+
+        if (password.isEmpty()) {
+            edtPassword.setError(G.getStringFromResource(R.string.validation_error_password_login, getActivity()));
+            valid = false;
+        } else {
+            edtPassword.setError(null);
+        }
 
         if (nationalCode.isEmpty() || nationalCode.length() != 10) {
             edtNationalCode.setError(G.getStringFromResource(R.string.validation_error_national_code, getActivity()));
@@ -170,20 +184,12 @@ public class EntranceFragment extends Fragment {
                 String tokenString = JSONParser.parseToken(result);
                 UserToken token = new UserToken();
                 token.setToken(tokenString);
-                RealmController.getInstance().addUserToken(token);
+                G.realmController.addUserToken(token, false);
 
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (((StartupActivity) getActivity()).registerFromInside) {
-                            getActivity().setResult(Keys.LOGIN_OK);
-                            getActivity().finish();
-                        } else {
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                            startActivity(intent);
-                            G.toastLong(G.getStringFromResource(R.string.login_ok, getActivity()), getActivity());
-                            getActivity().finish();
-                        }
+                        ((RegistrationActivity)getActivity()).loginToMain();
                     }
                 }, Constant.RIPPLE_EFFECT_DELAY);
                 break;
@@ -207,23 +213,25 @@ public class EntranceFragment extends Fragment {
             isLoaded = false;
             loaderLogo.setVisibility(View.VISIBLE);
             btnEnterAsStudent.setEnabled(false);
-            btnEnterAsGuest.setEnabled(false);
-            txtAuthorize.setEnabled(false);
+            btnEnterAsParent.setEnabled(false);
+            txtForgetPassword.setEnabled(false);
+            txtRegister.setEnabled(false);
 
             btnEnterAsStudent.setBackground(
                     getActivity().getResources().
                             getDrawable(R.drawable.shape_button_disable)
             );
 
-            btnEnterAsGuest.setBackground(
+            btnEnterAsParent.setBackground(
                     getActivity().getResources().
                             getDrawable(R.drawable.shape_button_disable)
             );
         }else {
             loaderLogo.setVisibility(View.GONE);
             btnEnterAsStudent.setEnabled(true);
-            btnEnterAsGuest.setEnabled(true);
-            txtAuthorize.setEnabled(true);
+            btnEnterAsParent.setEnabled(true);
+            txtRegister.setEnabled(true);
+            txtForgetPassword.setEnabled(true);
             isLoaded = !(state == 1);
 
             btnEnterAsStudent.setBackground(
@@ -231,9 +239,9 @@ public class EntranceFragment extends Fragment {
                             getDrawable(R.drawable.shape_button)
             );
 
-            btnEnterAsGuest.setBackground(
+            btnEnterAsParent.setBackground(
                     getActivity().getResources().
-                            getDrawable(R.drawable.shape_button)
+                            getDrawable(R.drawable.shape_button_secondary)
             );
         }
     }

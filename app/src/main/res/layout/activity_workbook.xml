@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".activity.other.WorkbookActivity">
 
+    <!--toolbar-->
     <LinearLayout
         android:id="@+id/container_toolbar"
         android:layout_width="match_parent"
@@ -18,10 +20,200 @@
 
     </LinearLayout>
 
+    <!--insert date-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:background="@drawable/shape_border"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/txtInsertDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:layout_margin="5dp"
+                android:text="@string/insert_date"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--update date-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:background="@drawable/shape_border"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/txtUpdateDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:layout_margin="5dp"
+                android:text="@string/update_date"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--scale-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:background="@drawable/shape_border"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:id="@+id/txtScale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryText"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/colorAccent"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_height="35dp">
+
+            <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fontTextView="shabnam_bold.ttf"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:layout_margin="5dp"
+                android:text="@string/scale"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--header-->
+    <LinearLayout
+        android:background="@drawable/shape_header_dialog"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            app:fontTextView="shabnam_bold.ttf"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:text="@string/grade"/>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:src="@color/divider"/>
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/txtLesson"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            app:fontTextView="shabnam_bold.ttf"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:text="@string/lessonTitle"/>
+
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rcvWorkbook"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
 
 

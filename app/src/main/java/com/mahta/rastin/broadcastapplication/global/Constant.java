@@ -1,6 +1,7 @@
 package com.mahta.rastin.broadcastapplication.global;
 
 public class Constant {
+    public static final long SLIDER_TIME = 5000;
     public static final long TIME_OUT = 15000;
     public static final long SPLASH_TIME = 3000;
     public static final int DRAWER_LAYOUT_CLOSING_DELAY = 400;
