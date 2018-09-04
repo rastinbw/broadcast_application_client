@@ -1,3 +1,4 @@
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
@@ -19,7 +20,9 @@ android {
         }
     }
 
-
+    defaultConfig {
+        applicationId "com.mahta.rastin.broadcastapplication"  // this is the id that your app has
+    }
 }
 
 dependencies {
@@ -38,6 +41,9 @@ dependencies {
     implementation 'com.github.arcadefire:nice-spinner:1.3.4'
     implementation 'com.chaos.view:pinview:1.4.1'
     implementation 'com.github.stfalcon:smsverifycatcher:0.3.2'
+    implementation 'com.google.firebase:firebase-config:11.2.0'
+    implementation 'com.google.firebase:firebase-messaging:11.2.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

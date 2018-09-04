@@ -4,8 +4,10 @@ package com.mahta.rastin.broadcastapplication.activity.main;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -136,9 +138,9 @@ public class StaffListFragment extends Fragment{
     }
 
     private void showDialog(int position) {
-        Staff staff = G.realmController.getAllStaff().get(position);
+        final Staff staff = G.realmController.getAllStaff().get(position);
 
-        Dialog settingsDialog = new Dialog(getActivity());
+        final Dialog settingsDialog = new Dialog(getActivity());
         settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         final View v = getActivity().getLayoutInflater().inflate(R.layout.layout_description_dialog
                 , null);
@@ -162,6 +164,27 @@ public class StaffListFragment extends Fragment{
 
         String name = staff.getFirst_name() + " " + staff.getLast_name();
         ((TextView)v.findViewById(R.id.txtName)).setText(name);
+        ((TextView)v.findViewById(R.id.txtProfession)).setText(staff.getProfession());
+
+        v.findViewById(R.id.imgSendEmail).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!staff.getEmail().equals("null")){
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto",staff.getEmail(), null));
+                    getActivity().startActivity(Intent.createChooser(emailIntent, "ارسال ایمیل"));
+                }else
+                    G.toastShort("ایمیلی ثبت نشده", getActivity());
+            }
+        });
+
+        v.findViewById(R.id.imgClose).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                settingsDialog.dismiss();
+            }
+        });
+
         settingsDialog.setContentView(v);
         settingsDialog.show();
     }

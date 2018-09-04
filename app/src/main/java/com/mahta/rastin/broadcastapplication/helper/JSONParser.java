@@ -1,11 +1,10 @@
 package com.mahta.rastin.broadcastapplication.helper;
 
-import android.transition.Slide;
-
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.model.Group;
 import com.mahta.rastin.broadcastapplication.model.Media;
+import com.mahta.rastin.broadcastapplication.model.Message;
 import com.mahta.rastin.broadcastapplication.model.MyNotification;
 import com.mahta.rastin.broadcastapplication.model.Post;
 import com.mahta.rastin.broadcastapplication.model.Program;
@@ -37,6 +36,37 @@ public class JSONParser {
             return 0;
         }
         return resultCode;
+    }
+
+    public static List<Message> parseMessages(String content){
+        try {
+            JSONObject obj = new JSONObject(content);
+            JSONArray data = obj.getJSONArray(Keys.KEY_DATA);
+            if (data.length() > 0){
+                List<Message> messageList = new ArrayList<>();
+
+                for (int i = 0; i < data.length(); i++) {
+                    if (!data.isNull(i)){
+                        JSONObject jpost = data.getJSONObject(i);
+                        Message message = new Message();
+
+                        message.setId(jpost.getInt(Keys.KEY_ID));
+                        message.setGroup_id(jpost.getInt(Keys.KEY_GROUP_ID));
+                        message.setTitle(jpost.getString(Keys.KEY_TITLE));
+                        message.setContent(jpost.getString(Keys.KEY_CONTENT));
+                        message.setCreated_at(jpost.getString(Keys.KEY_CREATED_AT));
+                        messageList.add(message);
+                    }
+                }
+                return messageList;
+            }else
+                return null;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            G.e("2: " + e.getMessage());
+            return null;
+        }
     }
 
     public static List<Post> parsePosts(String content){
@@ -200,6 +230,7 @@ public class JSONParser {
                         staff.setLast_name(sobj.getString(Keys.KEY_LAST_NAME));
                         staff.setEmail(sobj.getString(Keys.KEY_EMAIL));
                         staff.setDescription(sobj.getString(Keys.KEY_DESCRIPTION));
+                        staff.setProfession(sobj.getString(Keys.KEY_PROFESSION));
                         staff.setImage(sobj.getString(Keys.KEY_PHOTO));
 
                         Date date = format.parse(sobj.getString(Keys.KEY_DATE_UPDATED));

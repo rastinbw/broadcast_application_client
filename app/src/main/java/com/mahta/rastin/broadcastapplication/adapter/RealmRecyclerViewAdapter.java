@@ -31,4 +31,5 @@ public abstract class RealmRecyclerViewAdapter<T extends RealmObject, VH extends
     public void setRealmResults(RealmResults<T> realmResults) {
         this.realmResults = realmResults;
     }
+
 }

@@ -35,6 +35,9 @@ import com.mahta.rastin.broadcastapplication.interfaces.EndlessRecyclerViewScrol
 import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.Media;
+import com.mahta.rastin.broadcastapplication.model.Post;
+import com.mahta.rastin.broadcastapplication.model.ReadPost;
+
 import java.util.List;
 
 
@@ -106,6 +109,15 @@ public class MediaListFragment extends Fragment implements SwipeRefreshLayout.On
                 if (G.isNetworkAvailable(getActivity())){
                     Media media = G.realmController.getAllMedia().get(position);
                     if (media != null){
+
+                        // MAKE IT AS READ POST
+                        if (!G.realmController.hasReadPost(media.getId(), Constant.CATEGORY_ID_MEDIA)) {
+                            G.realmController.addReadPost(new ReadPost(media.getId(),
+                                    Constant.CATEGORY_ID_MEDIA)
+                            );
+                            G.i("adding");
+                        }
+
                         PlayerDialog dialog = new PlayerDialog(
                                 getActivity(),
                                 media
@@ -327,6 +339,12 @@ public class MediaListFragment extends Fragment implements SwipeRefreshLayout.On
             reset();
             loadMedia(Constant.MEDIA_REQUEST_COUNT, 0, 0, searchPhrase);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 
     @Override

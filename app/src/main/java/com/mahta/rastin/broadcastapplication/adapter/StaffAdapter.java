@@ -46,19 +46,7 @@ public class StaffAdapter extends RealmRecyclerViewAdapter<Staff,StaffAdapter.Cu
         final Staff current = realmResults.get(position); //This is nice
         String name = current.getFirst_name() + " " + current.getLast_name();
         holder.txtName.setText(name);
-
-        holder.imgEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!current.getEmail().equals("null")){
-                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                            "mailto",current.getEmail(), null));
-                    context.startActivity(Intent.createChooser(emailIntent, "ارسال ایمیل"));
-                }else
-                    G.toastShort("ایمیلی ثبت نشده", context);
-
-            }
-        });
+        holder.txtProfession.setText(current.getProfession());
 
         if(!current.getImage().equals("null")) {
 
@@ -79,16 +67,16 @@ public class StaffAdapter extends RealmRecyclerViewAdapter<Staff,StaffAdapter.Cu
 
     public class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView txtName;
+        TextView txtProfession;
         ImageView image;
-        ImageView imgEmail;
         RelativeLayout lnlListItem;
 
         private CustomViewHolder(View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
+            txtProfession = itemView.findViewById(R.id.txtProfession);
             lnlListItem = itemView.findViewById(R.id.rtlListItem);
             image = itemView.findViewById(R.id.image);
-            imgEmail = itemView.findViewById(R.id.imgEmail);
 
             lnlListItem.setOnClickListener(this);
         }

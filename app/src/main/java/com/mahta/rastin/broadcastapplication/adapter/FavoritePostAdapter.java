@@ -54,7 +54,6 @@ public class FavoritePostAdapter extends RealmRecyclerViewAdapter<FavoritePost,F
 
         holder.imgLogo.setImageBitmap(G.getBitmapFromResources(context.getResources(), R.drawable.img_news));
 
-
     }
 
     @Override

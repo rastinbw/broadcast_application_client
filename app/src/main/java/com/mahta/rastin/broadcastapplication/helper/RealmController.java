@@ -10,8 +10,10 @@ import com.mahta.rastin.broadcastapplication.model.FavoritePost;
 import com.mahta.rastin.broadcastapplication.model.FavoriteProgram;
 import com.mahta.rastin.broadcastapplication.model.Group;
 import com.mahta.rastin.broadcastapplication.model.Media;
+import com.mahta.rastin.broadcastapplication.model.Message;
 import com.mahta.rastin.broadcastapplication.model.Post;
 import com.mahta.rastin.broadcastapplication.model.Program;
+import com.mahta.rastin.broadcastapplication.model.ReadPost;
 import com.mahta.rastin.broadcastapplication.model.Slider;
 import com.mahta.rastin.broadcastapplication.model.Staff;
 import com.mahta.rastin.broadcastapplication.model.Student;
@@ -450,5 +452,47 @@ public class RealmController {
         result.deleteAllFromRealm();
         realm.commitTransaction();
     }
+
+    /***********************************************************************************************
+     * This Section Will Handle CRUD operation on ReadPost Model
+     **********************************************************************************************/
+    public boolean hasReadPost(int id, int type){
+        return !realm.where(ReadPost.class)
+                .equalTo(Keys.KEY_ID, id)
+                .equalTo(Keys.TYPE, type).findAll().isEmpty();
+    }
+
+    //add a Program to Realm
+    public void addReadPost(ReadPost post){
+        realm.beginTransaction();
+        realm.copyToRealm(post);
+        realm.commitTransaction();
+    }
+
+    /***********************************************************************************************
+     * This Section Will Handle CRUD operation on FavoritePost Model
+     **********************************************************************************************/
+    //find all objects in the program.class
+    public RealmResults<Message> getAllMessages() {
+        return realm.where(Message.class)
+                .findAll()
+                .sort(Keys.KEY_ID, Sort.DESCENDING);
+    }
+
+    //clear all objects from Program.class
+    public void clearAllMessages() {
+        realm.beginTransaction();
+        RealmResults<Message> result = realm.where(Message.class).findAll();
+        result.deleteAllFromRealm();
+        realm.commitTransaction();
+    }
+
+    //add a Program to Realm
+    public void addMessage(Message message){
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(message);
+        realm.commitTransaction();
+    }
+
 
 }

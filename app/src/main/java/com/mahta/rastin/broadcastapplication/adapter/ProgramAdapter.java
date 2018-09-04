@@ -1,6 +1,7 @@
 package com.mahta.rastin.broadcastapplication.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mahta.rastin.broadcastapplication.R;
+import com.mahta.rastin.broadcastapplication.global.Constant;
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.helper.DateConverter;
 import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
@@ -50,6 +52,12 @@ public class ProgramAdapter extends RealmRecyclerViewAdapter<Program,ProgramAdap
             ).toString());
         }catch (Exception e){
             e.printStackTrace();
+        }
+
+        if (G.realmController.hasReadPost(current.getId(), Constant.CATEGORY_ID_PROGRAM)) {
+            holder.lnlListItem.setBackgroundColor(Color.rgb(237, 237, 237));
+        }else {
+            holder.lnlListItem.setBackgroundColor(Color.rgb(255, 255, 255));
         }
 
         holder.imgLogo.setImageBitmap(G.getBitmapFromResources(context.getResources(), R.drawable.img_program));

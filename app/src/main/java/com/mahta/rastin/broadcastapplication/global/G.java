@@ -3,15 +3,15 @@ package com.mahta.rastin.broadcastapplication.global;
 import android.app.Activity;
 import android.app.Application;
 import android.content.BroadcastReceiver;
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,33 +19,21 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 import io.realm.Realm;
 
-import com.mahta.rastin.broadcastapplication.R;
-import com.mahta.rastin.broadcastapplication.custom.TextViewPlus;
-import com.mahta.rastin.broadcastapplication.helper.HttpCommand;
-import com.mahta.rastin.broadcastapplication.helper.JSONParser;
 import com.mahta.rastin.broadcastapplication.helper.RealmController;
-import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.Slider;
-import com.mahta.rastin.broadcastapplication.model.Staff;
-import com.mahta.rastin.broadcastapplication.model.StaffUpdated;
-import com.mahta.rastin.broadcastapplication.model.Student;
-import com.mahta.rastin.broadcastapplication.model.UserToken;
 import com.mahta.rastin.broadcastapplication.service.NetworkWatcher;
-
-import java.util.List;
 
 public class G extends Application {
     public static int providerId = 1; //This id is unique for each provider
     public static AppCompatActivity currentActivity;
     public static final String TAG = "mahta";
 
-    public static final String DOMAIN = "http://192.168.1.35/broadcast_app_server/public";
+    public static final String DOMAIN = "http://192.168.1.34/broadcast_app_server/public";
     // public static final String DOMAIN = "https://schoolbroadcastpanel.ir";
 
-    public static final String ABOUT_US_URL = DOMAIN + "/about_us";
-    public static final String RULES_URL = DOMAIN + "/rules";
-    public static final String POST_URL = DOMAIN + "/api/post/";
-    public static final String PROGRAM_URL = DOMAIN + "/api/program/";
+    public static final String HELP_URL = DOMAIN + "/help";
+    public static final String POST_URL = DOMAIN + "/post/";
+    public static final String PROGRAM_URL = DOMAIN + "/program/";
 
     public static final String BASE_URL = DOMAIN + "/api/" + providerId + "/";
     public static final String FILE_URL = DOMAIN + "/storage/";
@@ -55,7 +43,6 @@ public class G extends Application {
 
     public static Slider slider = null;
     public static RealmController realmController;
-
 
     @Override
     public void onCreate() {
@@ -87,12 +74,12 @@ public class G extends Application {
     }
 
     private void registerNetworkBroadcastForNougat() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            registerReceiver(networkWatcher, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            registerReceiver(networkWatcher, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            registerReceiver(networkWatcher, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            registerReceiver(networkWatcher, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+//        }
     }
 
 
@@ -148,5 +135,11 @@ public class G extends Application {
 
         return BitmapFactory.decodeResource(resources, resImage, options);
     }
-
+    public static void logout(Context context) {
+        realmController.removeUserToken();
+        realmController.removeStudent();
+        realmController.clearAllMessages();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        preferences.edit().remove(Keys.KEY_TOKEN).apply();
+    }
 }

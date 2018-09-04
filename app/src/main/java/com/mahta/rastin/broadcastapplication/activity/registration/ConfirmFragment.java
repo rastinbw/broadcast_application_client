@@ -229,15 +229,8 @@ public class ConfirmFragment extends Fragment {
     private void processConfirmResult(String result) {
         int resultCode = JSONParser.getResultCodeFromJson(result);
         if (resultCode == Keys.RESULT_SUCCESS){
-            //saving token
-            String tokenString = JSONParser.parseToken(result);
-            UserToken token = new UserToken();
-            token.setToken(tokenString);
-            G.realmController.addUserToken(token, false);
-
             //launching main activity
-            ((RegistrationActivity)getActivity()).loginToMain();
-
+            ((RegistrationActivity)getActivity()).loginToMain(result);
         }else if (resultCode == Keys.RESULT_INVALID_VERIFICATION_CODE){
             G.toastLong(G.getStringFromResource(
                     R.string.invalid_verification_code,

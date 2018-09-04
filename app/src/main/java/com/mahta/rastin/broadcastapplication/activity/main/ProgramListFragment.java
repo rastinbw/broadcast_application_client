@@ -38,7 +38,9 @@ import com.mahta.rastin.broadcastapplication.interfaces.EndlessRecyclerViewScrol
 import com.mahta.rastin.broadcastapplication.interfaces.OnDismissListener;
 import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
+import com.mahta.rastin.broadcastapplication.model.Post;
 import com.mahta.rastin.broadcastapplication.model.Program;
+import com.mahta.rastin.broadcastapplication.model.ReadPost;
 
 import java.util.List;
 
@@ -129,6 +131,16 @@ public class ProgramListFragment extends Fragment implements SwipeRefreshLayout.
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
+                    Program program = G.realmController.getAllPrograms().get(position);
+
+                    // MAKE IT AS READ POST
+                    if (!G.realmController.hasReadPost(program.getId(), Constant.CATEGORY_ID_PROGRAM)) {
+                        G.realmController.addReadPost(new ReadPost(program.getId(),
+                                Constant.CATEGORY_ID_PROGRAM)
+                        );
+                        G.i("adding");
+                    }
+
                     Intent intent = new Intent(getActivity(), ProgramDisplayActivity.class);
                     intent.putExtra(Keys.KEY_EXTRA_FLAG,G.realmController.getAllPrograms().get(position));
                     startActivity(intent);
@@ -348,6 +360,12 @@ public class ProgramListFragment extends Fragment implements SwipeRefreshLayout.
             reset();
             loadPrograms(Constant.POST_REQUEST_COUNT, 0, 0, searchPhrase, mGroupId);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 
     @Override

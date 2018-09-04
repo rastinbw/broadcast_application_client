@@ -54,7 +54,6 @@ public class FavoriteProgramAdapter extends RealmRecyclerViewAdapter<FavoritePro
 
         holder.imgLogo.setImageBitmap(G.getBitmapFromResources(context.getResources(), R.drawable.img_program));
 
-
     }
 
     @Override

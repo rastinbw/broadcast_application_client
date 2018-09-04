@@ -57,4 +57,8 @@ public class Keys {
     public static final String KEY_SCALE = "scale";
     public static final String KEY_IS_STUDENT = "is_student";
     public static final String KEY_CREATED_AT = "created_at";
+    public static final String TYPE ="type" ;
+    public static final String KEY_PROFESSION = "profession";
+    public static final String KEY_FIREBASE_TOKEN = "fire_base_token";
+    public static final String KEY_SERVER_FIREBASE_TOKEN = "server_fire_base_token";
 }

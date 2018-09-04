@@ -144,8 +144,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void goToRegistration(Activity activity) {
-        G.realmController.removeUserToken();
-        G.realmController.removeStudent();
+        G.logout(getActivity());
         Intent intent = new Intent(activity, RegistrationActivity.class);
         startActivity(intent);
         getActivity().finish();

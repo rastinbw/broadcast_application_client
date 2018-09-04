@@ -1,22 +1,23 @@
 package com.mahta.rastin.broadcastapplication.activity.main;
 
 import android.app.FragmentTransaction;
+import android.content.ContentValues;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.content.SharedPreferences;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mahta.rastin.broadcastapplication.R;
 import com.mahta.rastin.broadcastapplication.activity.other.UpdateInfoActivity;
-import com.mahta.rastin.broadcastapplication.activity.registration.RegistrationActivity;
 import com.mahta.rastin.broadcastapplication.adapter.DrawerItemCustomAdapter;
 import com.mahta.rastin.broadcastapplication.adapter.ImageSliderAdapter;
 import com.mahta.rastin.broadcastapplication.global.Constant;
@@ -24,9 +25,7 @@ import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.helper.HttpCommand;
 import com.mahta.rastin.broadcastapplication.helper.JSONParser;
-import com.mahta.rastin.broadcastapplication.helper.RealmController;
 import com.mahta.rastin.broadcastapplication.interfaces.OnFragmentActionListener;
-import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.DrawerItem;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
 
         setupViews();
         setupDrawer();
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity{
 
         loadSlider();
     }
+
 
     public void bringPostsFragment() {
         getFragmentManager().beginTransaction()
@@ -150,12 +151,23 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void run() {
                         getFragmentManager().beginTransaction()
-                                .replace(R.id.frmMainContainer,new StaffListFragment())
+                                .replace(R.id.frmMainContainer,new MessageListFragment())
                                 .commit();
                     }
                 },Constant.DRAWER_LAYOUT_CLOSING_DELAY);
                 break;
             case 5:
+                drawerLayout.closeDrawer(rightDrawer);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getFragmentManager().beginTransaction()
+                                .replace(R.id.frmMainContainer,new StaffListFragment())
+                                .commit();
+                    }
+                },Constant.DRAWER_LAYOUT_CLOSING_DELAY);
+                break;
+            case 6:
                 drawerLayout.closeDrawer(rightDrawer);
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -167,27 +179,27 @@ public class MainActivity extends AppCompatActivity{
                     }
                 },Constant.DRAWER_LAYOUT_CLOSING_DELAY);
                 break;
-            case 6:
-                drawerLayout.closeDrawer(rightDrawer);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        WebFragment fragment = new WebFragment();
-                        fragment.setUrl(G.RULES_URL);
-                        fragment.setTitle(G.getStringFromResource(R.string.rules, MainActivity.this));
-                        getFragmentManager().beginTransaction()
-                                .replace(R.id.frmMainContainer,fragment)
-                                .commit();
-                    }
-                },Constant.DRAWER_LAYOUT_CLOSING_DELAY);
-                break;
             case 7:
                 drawerLayout.closeDrawer(rightDrawer);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         WebFragment fragment = new WebFragment();
-                        fragment.setUrl(G.ABOUT_US_URL);
+                        fragment.setUrl(G.HELP_URL);
+                        fragment.setTitle(G.getStringFromResource(R.string.help, MainActivity.this));
+                        getFragmentManager().beginTransaction()
+                                .replace(R.id.frmMainContainer,fragment)
+                                .commit();
+                    }
+                },Constant.DRAWER_LAYOUT_CLOSING_DELAY);
+                break;
+            case 8:
+                drawerLayout.closeDrawer(rightDrawer);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        WebFragment fragment = new WebFragment();
+                        fragment.setUrl(G.BASE_URL + "about");
                         fragment.setTitle(G.getStringFromResource(R.string.about_us, MainActivity.this));
                         getFragmentManager().beginTransaction()
                                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
@@ -211,15 +223,16 @@ public class MainActivity extends AppCompatActivity{
         );
 
         //setting drawer layout items
-        DrawerItem[] drawerItems = new DrawerItem[8];
+        DrawerItem[] drawerItems = new DrawerItem[9];
         drawerItems[0] = new DrawerItem(R.drawable.img_profile, navigationDrawerItemTitles[0]);
         drawerItems[1] = new DrawerItem(R.drawable.img_posts, navigationDrawerItemTitles[1]);
         drawerItems[2] = new DrawerItem(R.drawable.img_calendar, navigationDrawerItemTitles[2]);
         drawerItems[3] = new DrawerItem(R.drawable.img_media_2, navigationDrawerItemTitles[3]);
-        drawerItems[4] = new DrawerItem(R.drawable.img_member, navigationDrawerItemTitles[4]);
-        drawerItems[5] = new DrawerItem(R.drawable.img_support, navigationDrawerItemTitles[5]);
-        drawerItems[6] = new DrawerItem(R.drawable.img_laws, navigationDrawerItemTitles[6]);
-        drawerItems[7] = new DrawerItem(R.drawable.img_about_us, navigationDrawerItemTitles[7]);
+        drawerItems[4] = new DrawerItem(R.drawable.img_messages, navigationDrawerItemTitles[4]);
+        drawerItems[5] = new DrawerItem(R.drawable.img_member, navigationDrawerItemTitles[5]);
+        drawerItems[6] = new DrawerItem(R.drawable.img_support, navigationDrawerItemTitles[6]);
+        drawerItems[7] = new DrawerItem(R.drawable.img_help, navigationDrawerItemTitles[7]);
+        drawerItems[8] = new DrawerItem(R.drawable.img_about_us, navigationDrawerItemTitles[8]);
 
 
         DrawerItemCustomAdapter adapter = new DrawerItemCustomAdapter(this, R.layout.layout_listview_drawer, drawerItems);
@@ -338,7 +351,6 @@ public class MainActivity extends AppCompatActivity{
                     }
                 }).execute();
     }
-
 
     private void setSliderViews() {
         //Set the pager with an adapter

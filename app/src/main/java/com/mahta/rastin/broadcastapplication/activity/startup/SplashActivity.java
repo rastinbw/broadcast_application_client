@@ -1,6 +1,5 @@
 package com.mahta.rastin.broadcastapplication.activity.startup;
 
-import android.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -12,18 +11,14 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import com.mahta.rastin.broadcastapplication.R;
-import com.mahta.rastin.broadcastapplication.activity.main.MainActivity;
-import com.mahta.rastin.broadcastapplication.activity.registration.ConfirmFragment;
 import com.mahta.rastin.broadcastapplication.activity.registration.RegistrationActivity;
 import com.mahta.rastin.broadcastapplication.global.Constant;
 import com.mahta.rastin.broadcastapplication.global.G;
 import com.mahta.rastin.broadcastapplication.global.Keys;
 import com.mahta.rastin.broadcastapplication.helper.HttpCommand;
 import com.mahta.rastin.broadcastapplication.helper.JSONParser;
-import com.mahta.rastin.broadcastapplication.helper.RealmController;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.Group;
-import com.mahta.rastin.broadcastapplication.service.NotificationService;
 
 import java.util.List;
 import java.util.Locale;
@@ -42,9 +37,9 @@ public class SplashActivity extends AppCompatActivity {
 
 
         if (G.isNetworkAvailable(getApplicationContext())) {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                startService(new Intent(this, NotificationService.class));
-            }
+//            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+//                startService(new Intent(this, NotificationService.class));
+//            }
             runSplash();
         }else {
             findViewById(R.id.rtlNoNetwork).setVisibility(View.VISIBLE);
@@ -119,8 +114,7 @@ public class SplashActivity extends AppCompatActivity {
                         public void onResult(String result) {
                             int resultCode = JSONParser.getResultCodeFromJson(result);
                             if (resultCode == Keys.RESULT_INVALID_TOKEN){
-                                G.realmController.removeUserToken();
-                                G.realmController.removeStudent();
+                               G.logout(getApplicationContext());
                             }
                         }
                     }).execute();

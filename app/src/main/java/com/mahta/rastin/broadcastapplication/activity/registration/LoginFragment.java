@@ -176,20 +176,14 @@ public class LoginFragment extends Fragment {
                 }).execute();
     }
 
-    private void processResult(String result) {
+    private void processResult(final String result) {
         int resultCode = JSONParser.getResultCodeFromJson(result);
         switch (resultCode) {
             case Keys.RESULT_SUCCESS:
-                G.i("loginok");
-                String tokenString = JSONParser.parseToken(result);
-                UserToken token = new UserToken();
-                token.setToken(tokenString);
-                G.realmController.addUserToken(token, false);
-
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        ((RegistrationActivity)getActivity()).loginToMain();
+                        ((RegistrationActivity)getActivity()).loginToMain(result);
                     }
                 }, Constant.RIPPLE_EFFECT_DELAY);
                 break;

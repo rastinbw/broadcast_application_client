@@ -36,6 +36,7 @@ import com.mahta.rastin.broadcastapplication.interfaces.EndlessRecyclerViewScrol
 import com.mahta.rastin.broadcastapplication.interfaces.OnItemClickListener;
 import com.mahta.rastin.broadcastapplication.interfaces.OnResultListener;
 import com.mahta.rastin.broadcastapplication.model.Post;
+import com.mahta.rastin.broadcastapplication.model.ReadPost;
 
 import java.util.List;
 
@@ -106,8 +107,18 @@ public class PostListFragment extends Fragment implements SwipeRefreshLayout.OnR
             @Override
             public void onItemClicked(View view, int position) {
                 if (G.isNetworkAvailable(getActivity())){
+                    Post post = G.realmController.getAllPosts().get(position);
+
+                    // MAKE IT AS READ POST
+                    if (!G.realmController.hasReadPost(post.getId(), Constant.CATEGORY_ID_POST)) {
+                        G.realmController.addReadPost(new ReadPost(post.getId(),
+                                Constant.CATEGORY_ID_POST)
+                        );
+                        G.i("adding");
+                    }
+
                     Intent intent = new Intent(getActivity(), PostDisplayActivity.class);
-                    intent.putExtra(Keys.KEY_EXTRA_FLAG,G.realmController.getAllPosts().get(position));
+                    intent.putExtra(Keys.KEY_EXTRA_FLAG,post);
                     startActivity(intent);
                 }else {
                     G.toastLong(G.getStringFromResource(R.string.no_internet, getActivity()), getActivity());
@@ -155,6 +166,12 @@ public class PostListFragment extends Fragment implements SwipeRefreshLayout.OnR
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadPosts(Constant.POST_REQUEST_COUNT,0,0, searchPhrase);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 
     void setupToolbar(View view){

@@ -22,7 +22,7 @@
     <RelativeLayout
         android:layout_below="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="wrap_content">
 
         <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
             android:id="@+id/txtName"
@@ -30,23 +30,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
+            android:layout_centerHorizontal="true"
+            app:fontTextView="shabnam.ttf"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimaryText"/>
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/txtProfession"
+            android:layout_below="@+id/txtName"
+            android:layout_centerHorizontal="true"
+            android:text="معلم ریاضی"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             app:fontTextView="shabnam.ttf"
             android:textSize="12sp"
             android:layout_centerInParent="true"
-            android:textColor="@color/colorPrimaryText"/>
-
-        <ImageView
-            android:id="@+id/imgEmail"
-            app:srcCompat="@drawable/ic_email_black_24dp"
-            android:layout_marginLeft="5dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorSecondaryDark"
+            android:layout_marginBottom="5dp"/>
 
     </RelativeLayout>
+
 
 
 

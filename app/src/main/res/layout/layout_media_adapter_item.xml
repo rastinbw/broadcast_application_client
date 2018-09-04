@@ -37,6 +37,7 @@
                 app:fontTextView="shabnam_bold.ttf"/>
 
             <LinearLayout
+                android:layoutDirection="rtl"
                 android:layout_marginTop="5dp"
                 android:id="@+id/lnlDate"
                 android:layout_alignParentBottom="true"
@@ -49,7 +50,7 @@
                     android:gravity="right|center_vertical"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="10sp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:fontTextView="shabnam.ttf"/>
 

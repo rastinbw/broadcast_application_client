@@ -5,10 +5,11 @@
         <item>اطلاعیه ها</item>
         <item>برنامه های کلاسی</item>
         <item>رادیو مدرسه</item>
+        <item>پیام ها</item>
         <item>اعضای مجموعه</item>
         <item>پشتیبانی</item>
-        <item>قوانین</item>
-        <item>درباره ما</item>
+        <item>راهنما</item>
+        <item>درباره مدرسه</item>
     </string-array>
 
     <string name="click_twice">برای خروج دوباره لمس کنید</string>
@@ -135,4 +136,9 @@
     <string name="insert_date">تاریخ درج کارنامه :</string>
     <string name="update_date">تاریخ آخرین تغییرات :</string>
     <string name="scale">مقیاس :</string>
+    <string name="not_read">( جدید )</string>
+    <string name="there_is_no_message">پیامی وجود ندارد</string>
+    <string name="messages">پیام ها</string>
+    <string name="help">راهنما</string>
+    <string name="new_message">پیام جدید</string>
 </resources>

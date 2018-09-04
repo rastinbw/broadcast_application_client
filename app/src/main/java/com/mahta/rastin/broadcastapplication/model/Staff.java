@@ -15,6 +15,8 @@ public class Staff extends RealmObject {
 
     private String description;
 
+    private String profession;
+
     private String image;
 
     private String email;
@@ -76,5 +78,13 @@ public class Staff extends RealmObject {
 
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 }

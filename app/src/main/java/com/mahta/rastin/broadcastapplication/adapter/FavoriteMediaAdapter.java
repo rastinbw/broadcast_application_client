@@ -53,7 +53,6 @@ public class FavoriteMediaAdapter extends RealmRecyclerViewAdapter<FavoriteMedia
 
         holder.imgLogo.setImageBitmap(G.getBitmapFromResources(context.getResources(), R.drawable.img_media));
 
-
     }
 
     @Override

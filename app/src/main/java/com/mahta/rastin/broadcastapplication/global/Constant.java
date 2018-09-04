@@ -13,6 +13,7 @@ public class Constant {
     public static final int CATEGORY_ID_POST = 100;
     public static final int CATEGORY_ID_MEDIA = 200;
     public static final int CATEGORY_ID_PROGRAM = 300;
+    public static final int CATEGORY_ID_MESSAGE = 400;
     public static final String TYPE_MEDIA = "media";
     public static final String TYPE_PROGRAM = "program";
     public static final String TYPE_HTML = "html";

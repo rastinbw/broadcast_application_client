@@ -1,63 +1,121 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="5dp"
     android:layout_width="match_parent"
     android:layout_height="380dp"
-    android:background="@android:color/transparent">
+    android:background="@android:color/transparent"
+    android:padding="5dp">
 
-        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-            android:layout_margin="2dp"
-            android:id="@+id/txtName"
-            android:gravity="center"
-            android:textColor="@color/colorPrimaryText"
-            android:layout_width="match_parent"
-            app:fontTextView="shabnam.ttf"
-            android:layout_height="30dp" />
+    <RelativeLayout
+        android:id="@+id/rtlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="25dp">
 
         <ImageView
-            android:layout_below="@+id/txtName"
-            android:id="@+id/imgDivider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="2dp"
-            android:src="@color/colorPlatinum"/>
+            android:id="@+id/imgClose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_close_black_24dp"/>
 
-        <WebView
-            android:layout_below="@+id/imgDivider"
-            android:scrollbarAlwaysDrawHorizontalTrack="true"
-            android:layout_margin="2dp"
-            android:id="@+id/wbvContent"
-            android:layout_width="match_parent"
-            android:layout_height="350dp">
-        </WebView>
+        <ImageView
+            android:id="@+id/imgSendEmail"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toLeftOf="@+id/imgClose"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_email_black_24dp"/>
 
-        <LinearLayout
-            android:id="@+id/lnlLoading"
-            android:layout_marginBottom="10dp"
-            android:layout_centerInParent="true"
-            android:orientation="vertical"
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rtlHeader"
+        android:layout_margin="2dp"
+        android:src="@color/colorPlatinum" />
+
+    <RelativeLayout
+        android:layout_below="@+id/imgDivider"
+        android:id="@+id/rtlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/txtName"
+            android:text="علیرضا بامداد"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            app:fontTextView="shabnam.ttf"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimaryText"/>
 
-                <com.wang.avi.AVLoadingIndicatorView
-                    android:id="@+id/loadingLogo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:indicatorName="LineScaleIndicator"
-                    app:indicatorColor="@color/colorAccent"
-                    android:layout_gravity="center_horizontal"
-                    />
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/txtProfession"
+            android:layout_below="@+id/txtName"
+            android:layout_centerHorizontal="true"
+            android:text="معلم ریاضی"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:fontTextView="shabnam.ttf"
+            android:textSize="12sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorSecondaryDark"
+            android:layout_marginBottom="5dp"/>
 
-                <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
-                    android:id="@+id/loadingText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryText"
-                    android:text="@string/loading"
-                    android:textSize="14sp"
-                    app:fontTextView="shabnam_bold.ttf"/>
+    </RelativeLayout>
 
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/imgDivider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rtlTitle"
+        android:layout_margin="2dp"
+        android:src="@color/colorPlatinum" />
+
+
+    <WebView
+        android:id="@+id/wbvContent"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_below="@+id/imgDivider2"
+        android:layout_margin="2dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"/>
+
+    <LinearLayout
+        android:id="@+id/lnlLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadingLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:indicatorColor="@color/colorAccent"
+            app:indicatorName="LineScaleIndicator" />
+
+        <com.mahta.rastin.broadcastapplication.custom.TextViewPlus
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="14sp"
+            app:fontTextView="shabnam_bold.ttf" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

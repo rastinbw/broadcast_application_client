@@ -46,6 +46,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
 
     private Student currentStudent;
     private Integer selectedGroupId = null;
+    private Integer firstGroupId = null;
     private int messageSendResult;
     private boolean isLoaded;
 
@@ -126,6 +127,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
             });
 
             selectedGroupId = currentStudent.getGroup_id();
+            firstGroupId = currentStudent.getGroup_id();
             spnGroups.setSelectedIndex(getGroupIndex(data, selectedGroupId));
         }
     }
@@ -219,6 +221,11 @@ public class UpdateInfoActivity extends AppCompatActivity {
 
                         switch (messageSendResult) {
                             case Keys.RESULT_SUCCESS:
+                                if (!selectedGroupId.equals(firstGroupId)){
+                                    G.i("Clearing messages");
+                                    G.realmController.clearAllMessages();
+                                }
+
                                 Student student = new Student();
                                 student.setFirst_name(edtFirstName.getText().toString().trim());
                                 student.setLast_name(edtLastName.getText().toString().trim());
